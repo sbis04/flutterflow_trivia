@@ -22,11 +22,7 @@ class CreateJoinScreenModel extends FlutterFlowModel<CreateJoinScreenWidget> {
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   RoomRecord? roomDetailsSmall;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  PlayersRecord? playerDocumentSmall;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
   RoomRecord? roomDetails;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  PlayersRecord? playerDocument;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;

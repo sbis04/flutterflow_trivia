@@ -52,122 +52,126 @@ class _CelebratePageWidgetState extends State<CelebratePageWidget> {
 
     context.watch<FFAppState>();
 
-    return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
-        body: SafeArea(
-          top: true,
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primary,
-            ),
-            child: Stack(
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
+    return Title(
+        title: 'CelebratePage',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: GestureDetector(
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            body: SafeArea(
+              top: true,
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primary,
+                ),
+                child: Stack(
                   children: [
-                    Column(
+                    Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FaIcon(
-                          FontAwesomeIcons.trophy,
-                          color: Color(0xFFFFB938),
-                          size: 90.0,
-                        ),
-                        Text(
-                          'WINNER',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryBtnText,
-                                fontSize: 36.0,
-                              ),
-                        ),
-                        Text(
-                          'Blue Team',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.trophy,
+                              color: Color(0xFFFFB938),
+                              size: 90.0,
+                            ),
+                            Text(
+                              'WINNER',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    fontSize: 36.0,
+                                  ),
+                            ),
+                            Text(
+                              'Blue Team',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     fontSize: 36.0,
                                     fontWeight: FontWeight.w500,
                                   ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 50.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              logFirebaseEvent(
-                                  'CELEBRATE_START_NEW_GAME_BTN_ON_TAP');
-                              FFAppState().update(() {
-                                FFAppState().words = [];
-                              });
-
-                              context.pushNamed(
-                                'CreateJoinScreen',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                  ),
-                                },
-                              );
-                            },
-                            text: 'Start New Game',
-                            options: FFButtonOptions(
-                              width: 200.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: Color(0x004B39EF),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                              elevation: 2.0,
-                              borderSide: BorderSide(
-                                color:
-                                    FlutterFlowTheme.of(context).primaryBtnText,
-                                width: 4.0,
-                              ),
-                              borderRadius: BorderRadius.circular(16.0),
                             ),
-                          ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 50.0, 0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'CELEBRATE_START_NEW_GAME_BTN_ON_TAP');
+                                  FFAppState().update(() {
+                                    FFAppState().words = [];
+                                  });
+
+                                  context.pushNamed(
+                                    'CreateJoinScreen',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                      ),
+                                    },
+                                  );
+                                },
+                                text: 'Start New Game',
+                                options: FFButtonOptions(
+                                  width: 200.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0x004B39EF),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  elevation: 2.0,
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    width: 4.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
+                    Container(
+                      width: double.infinity,
+                      height: double.infinity,
+                      child: custom_widgets.ConfettiOverlay(
+                        width: double.infinity,
+                        height: double.infinity,
+                      ),
+                    ),
                   ],
                 ),
-                Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: custom_widgets.ConfettiOverlay(
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

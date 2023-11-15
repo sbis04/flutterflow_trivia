@@ -190,8 +190,8 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                   if (!snapshot.hasData) {
                     return Center(
                       child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 40.0,
+                        height: 40.0,
                         child: CircularProgressIndicator(
                           valueColor: AlwaysStoppedAnimation<Color>(
                             FlutterFlowTheme.of(context).primary,
@@ -211,36 +211,47 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                   return FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent('JOIN_GAME_COMP_JOIN_BTN_ON_TAP');
-
-                      var playersRecordReference =
-                          PlayersRecord.createDoc(buttonRoomRecord!.reference);
-                      await playersRecordReference.set(createPlayersRecordData(
-                        name: currentUserDisplayName,
-                        isTeamSelected: false,
-                        uid: currentUserUid,
-                      ));
-                      _model.playerDocument = PlayersRecord.getDocumentFromData(
-                          createPlayersRecordData(
-                            name: currentUserDisplayName,
-                            isTeamSelected: false,
-                            uid: currentUserUid,
-                          ),
-                          playersRecordReference);
                       if (buttonRoomRecord?.host == currentUserUid) {
                         context.pushNamed(
                           'HostPage',
                           queryParameters: {
                             'roomDetails': serializeParam(
-                              buttonRoomRecord,
-                              ParamType.Document,
+                              buttonRoomRecord?.reference,
+                              ParamType.DocumentReference,
                             ),
                           }.withoutNulls,
-                          extra: <String, dynamic>{
-                            'roomDetails': buttonRoomRecord,
-                          },
                         );
                       } else {
-                        context.goNamed('TriviaPage');
+                        var playersRecordReference = PlayersRecord.createDoc(
+                            buttonRoomRecord!.reference);
+                        await playersRecordReference
+                            .set(createPlayersRecordData(
+                          name: currentUserDisplayName,
+                          uid: currentUserUid,
+                          isReady: true,
+                          createdAt: getCurrentTimestamp,
+                          email: currentUserEmail,
+                        ));
+                        _model.playerDocument =
+                            PlayersRecord.getDocumentFromData(
+                                createPlayersRecordData(
+                                  name: currentUserDisplayName,
+                                  uid: currentUserUid,
+                                  isReady: true,
+                                  createdAt: getCurrentTimestamp,
+                                  email: currentUserEmail,
+                                ),
+                                playersRecordReference);
+
+                        context.goNamed(
+                          'TriviaPage',
+                          queryParameters: {
+                            'roomCode': serializeParam(
+                              buttonRoomRecord?.code,
+                              ParamType.int,
+                            ),
+                          }.withoutNulls,
+                        );
                       }
 
                       FFAppState().update(() {

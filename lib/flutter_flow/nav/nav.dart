@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -101,11 +100,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'HostPage',
               path: 'hostPage',
               requireAuth: true,
-              asyncParams: {
-                'roomDetails': getDoc(['room'], RoomRecord.fromSnapshot),
-              },
               builder: (context, params) => HostPageWidget(
-                roomDetails: params.getParam('roomDetails', ParamType.Document),
+                roomDetails: params.getParam('roomDetails',
+                    ParamType.DocumentReference, false, ['room']),
               ),
             ),
             FFRoute(
@@ -319,7 +316,7 @@ class FFRoute {
                   color: FlutterFlowTheme.of(context).primary,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/trivia_logo_white.png',
+                      'assets/images/trivia_logo_white_high_res.png',
                       width: MediaQuery.sizeOf(context).width * 0.25,
                       height: MediaQuery.sizeOf(context).height * 0.25,
                       fit: BoxFit.contain,
@@ -361,7 +358,11 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(
+        hasTransition: true,
+        transitionType: PageTransitionType.fade,
+        duration: Duration(milliseconds: 300),
+      );
 }
 
 class RootPageContext {

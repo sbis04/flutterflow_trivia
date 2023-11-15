@@ -21,34 +21,34 @@ class PlayersRecord extends FirestoreRecord {
   String get name => _name ?? '';
   bool hasName() => _name != null;
 
-  // "is_team_selected" field.
-  bool? _isTeamSelected;
-  bool get isTeamSelected => _isTeamSelected ?? false;
-  bool hasIsTeamSelected() => _isTeamSelected != null;
-
-  // "is_blue" field.
-  bool? _isBlue;
-  bool get isBlue => _isBlue ?? false;
-  bool hasIsBlue() => _isBlue != null;
-
-  // "is_spymaster" field.
-  bool? _isSpymaster;
-  bool get isSpymaster => _isSpymaster ?? false;
-  bool hasIsSpymaster() => _isSpymaster != null;
-
   // "uid" field.
   String? _uid;
   String get uid => _uid ?? '';
   bool hasUid() => _uid != null;
 
+  // "is_ready" field.
+  bool? _isReady;
+  bool get isReady => _isReady ?? false;
+  bool hasIsReady() => _isReady != null;
+
+  // "created_at" field.
+  DateTime? _createdAt;
+  DateTime? get createdAt => _createdAt;
+  bool hasCreatedAt() => _createdAt != null;
+
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
-    _isTeamSelected = snapshotData['is_team_selected'] as bool?;
-    _isBlue = snapshotData['is_blue'] as bool?;
-    _isSpymaster = snapshotData['is_spymaster'] as bool?;
     _uid = snapshotData['uid'] as String?;
+    _isReady = snapshotData['is_ready'] as bool?;
+    _createdAt = snapshotData['created_at'] as DateTime?;
+    _email = snapshotData['email'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -92,18 +92,18 @@ class PlayersRecord extends FirestoreRecord {
 
 Map<String, dynamic> createPlayersRecordData({
   String? name,
-  bool? isTeamSelected,
-  bool? isBlue,
-  bool? isSpymaster,
   String? uid,
+  bool? isReady,
+  DateTime? createdAt,
+  String? email,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'name': name,
-      'is_team_selected': isTeamSelected,
-      'is_blue': isBlue,
-      'is_spymaster': isSpymaster,
       'uid': uid,
+      'is_ready': isReady,
+      'created_at': createdAt,
+      'email': email,
     }.withoutNulls,
   );
 
@@ -116,15 +116,15 @@ class PlayersRecordDocumentEquality implements Equality<PlayersRecord> {
   @override
   bool equals(PlayersRecord? e1, PlayersRecord? e2) {
     return e1?.name == e2?.name &&
-        e1?.isTeamSelected == e2?.isTeamSelected &&
-        e1?.isBlue == e2?.isBlue &&
-        e1?.isSpymaster == e2?.isSpymaster &&
-        e1?.uid == e2?.uid;
+        e1?.uid == e2?.uid &&
+        e1?.isReady == e2?.isReady &&
+        e1?.createdAt == e2?.createdAt &&
+        e1?.email == e2?.email;
   }
 
   @override
   int hash(PlayersRecord? e) => const ListEquality()
-      .hash([e?.name, e?.isTeamSelected, e?.isBlue, e?.isSpymaster, e?.uid]);
+      .hash([e?.name, e?.uid, e?.isReady, e?.createdAt, e?.email]);
 
   @override
   bool isValidKey(Object? o) => o is PlayersRecord;
