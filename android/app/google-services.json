@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "591384356871",
+    "project_id": "trivia-c94a2",
+    "storage_bucket": "trivia-c94a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591384356871:android:1896f1e6b02c35132322a2",
+        "android_client_info": {
+          "package_name": "io.flutterflow.trivia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlwQeRgUXDsm2HLvSV0T4_UoJONVYo6ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
