@@ -301,82 +301,73 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                               : null;
                       return Stack(
                         children: [
-                          Stack(
-                            children: [
-                              if (responsiveVisibility(
-                                context: context,
-                                tabletLandscape: false,
-                                desktop: false,
-                              ))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 16.0, 0.0, 0.0),
-                                  child: SingleChildScrollView(
-                                    child: Column(
+                          if (responsiveVisibility(
+                            context: context,
+                            tabletLandscape: false,
+                            desktop: false,
+                          ))
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 0.0),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Text(
-                                              'Code: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 16.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 16.0, 0.0),
-                                              child: Text(
-                                                widget.roomCode!.toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
+                                        Text(
+                                          'Code: ',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.black,
+                                                fontSize: 16.0,
+                                                fontWeight: FontWeight.normal,
                                               ),
-                                            ),
-                                          ],
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 16.0),
-                                          child: Row(
+                                                  0.0, 0.0, 16.0, 0.0),
+                                          child: Text(
+                                            widget.roomCode!.toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 16.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Column(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Trivia',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
+                                              Text(
+                                                'Trivia',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Lobster',
@@ -385,181 +376,8 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                               .primary,
                                                           fontSize: 32.0,
                                                         ),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'Your name: ',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color:
-                                                                  Colors.black,
-                                                              fontSize: 14.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                            ),
-                                                      ),
-                                                      AuthUserStreamWidget(
-                                                        builder: (context) =>
-                                                            Text(
-                                                          currentUserDisplayName,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondary,
-                                                                fontSize: 14.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
                                               ),
-                                              FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 30.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
-                                                icon: Icon(
-                                                  Icons.people_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 30.0,
-                                                ),
-                                                onPressed: () async {
-                                                  logFirebaseEvent(
-                                                      'TRIVIA_people_rounded_ICN_ON_TAP');
-                                                  scaffoldKey.currentState!
-                                                      .openEndDrawer();
-                                                },
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                            ],
-                          ),
-                          Stack(
-                            children: [
-                              if (responsiveVisibility(
-                                context: context,
-                                phone: false,
-                                tablet: false,
-                              ))
-                                Align(
-                                  alignment: AlignmentDirectional(0.00, 0.00),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        32.0, 32.0, 32.0, 32.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 16.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Expanded(
-                                                    child: Text(
-                                                      'Trivia',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lobster',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 42.0,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                16.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                      children: [
-                                                        Text(
-                                                          'Room Code: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: Colors
-                                                                    .black,
-                                                                fontSize: 20.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          widget.roomCode!
-                                                              .toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 20.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 16.0, 0.0),
-                                              child: Row(
+                                              Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Text(
@@ -570,7 +388,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color: Colors.black,
-                                                          fontSize: 18.0,
+                                                          fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -588,78 +406,230 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
-                                                                fontSize: 18.0,
+                                                                fontSize: 14.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
                                                               ),
                                                     ),
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(5.0, 5.0,
-                                                                16.0, 5.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        logFirebaseEvent(
-                                                            'TRIVIA_PAGE_PAGE_Text_11ndxjzy_ON_TAP');
-
-                                                        context.goNamed(
-                                                          'CreateJoinScreen',
-                                                          extra: <String,
-                                                              dynamic>{
-                                                            kTransitionInfoKey:
-                                                                TransitionInfo(
-                                                              hasTransition:
-                                                                  true,
-                                                              transitionType:
-                                                                  PageTransitionType
-                                                                      .leftToRight,
-                                                            ),
-                                                          },
-                                                        );
-                                                      },
-                                                      child: Text(
-                                                        'Leave game',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .error,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ),
                                                 ],
                                               ),
+                                            ],
+                                          ),
+                                          FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 60.0,
+                                            icon: Icon(
+                                              Icons.people_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 30.0,
                                             ),
-                                          ],
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'TRIVIA_people_rounded_ICN_ON_TAP');
+                                              scaffoldKey.currentState!
+                                                  .openEndDrawer();
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            tablet: false,
+                          ))
+                            Align(
+                              alignment: AlignmentDirectional(0.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    32.0, 32.0, 32.0, 32.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 16.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Expanded(
+                                                child: Text(
+                                                  'Trivia',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Lobster',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        fontSize: 42.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 16.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      'Room Code: ',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: Colors.black,
+                                                            fontSize: 20.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
+                                                    ),
+                                                    Text(
+                                                      widget.roomCode!
+                                                          .toString(),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 20.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 16.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Your name: ',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.black,
+                                                          fontSize: 18.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                              Expanded(
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    currentUserDisplayName,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          fontSize: 18.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 5.0, 16.0, 5.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    logFirebaseEvent(
+                                                        'TRIVIA_PAGE_PAGE_Text_11ndxjzy_ON_TAP');
+
+                                                    context.goNamed(
+                                                      'CreateJoinScreen',
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .leftToRight,
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
+                                                  child: Text(
+                                                    'Leave game',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
+                                  ],
                                 ),
-                            ],
-                          ),
+                              ),
+                            ),
                         ],
                       );
                     },

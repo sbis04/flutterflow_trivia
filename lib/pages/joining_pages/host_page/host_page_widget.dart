@@ -1,10 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/loading_dialog/loading_dialog_widget.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:aligned_dialog/aligned_dialog.dart';
@@ -742,7 +744,7 @@ class _HostPageWidgetState extends State<HostPageWidget> {
                                                                     0.0,
                                                                     12.0,
                                                                     0.0,
-                                                                    0.0),
+                                                                    16.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -793,6 +795,114 @@ class _HostPageWidgetState extends State<HostPageWidget> {
                                                         ),
                                                       ),
                                                     ],
+                                                  ),
+                                                ),
+                                                Divider(
+                                                  height: 24.0,
+                                                  thickness: 1.0,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .accent4,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 24.0, 0.0, 0.0),
+                                                  child: StreamBuilder<
+                                                      List<QuestionSetsRecord>>(
+                                                    stream:
+                                                        queryQuestionSetsRecord(
+                                                      queryBuilder:
+                                                          (questionSetsRecord) =>
+                                                              questionSetsRecord
+                                                                  .orderBy(
+                                                                      'created_at',
+                                                                      descending:
+                                                                          true),
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            child:
+                                                                CircularProgressIndicator(
+                                                              valueColor:
+                                                                  AlwaysStoppedAnimation<
+                                                                      Color>(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<QuestionSetsRecord>
+                                                          dropDownQuestionSetsRecordList =
+                                                          snapshot.data!;
+                                                      return FlutterFlowDropDown<
+                                                          String>(
+                                                        controller: _model
+                                                                .dropDownValueController ??=
+                                                            FormFieldController<
+                                                                String>(null),
+                                                        options:
+                                                            dropDownQuestionSetsRecordList
+                                                                .map((e) =>
+                                                                    e.setName)
+                                                                .toList(),
+                                                        onChanged: (val) =>
+                                                            setState(() => _model
+                                                                    .dropDownValue =
+                                                                val),
+                                                        width: double.infinity,
+                                                        height: 60.0,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+                                                        hintText:
+                                                            'Select question set...',
+                                                        icon: Icon(
+                                                          Icons
+                                                              .keyboard_arrow_down_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 24.0,
+                                                        ),
+                                                        elevation: 2.0,
+                                                        borderColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        borderWidth: 2.0,
+                                                        borderRadius: 10.0,
+                                                        margin:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    4.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        hidesUnderline: true,
+                                                        isSearchable: false,
+                                                        isMultiSelect: false,
+                                                      );
+                                                    },
                                                   ),
                                                 ),
                                                 Spacer(flex: 3),

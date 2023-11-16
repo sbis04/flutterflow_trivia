@@ -97,16 +97,16 @@ class _MyAppState extends State<MyApp> {
           thumbVisibility: MaterialStateProperty.all(false),
           trackVisibility: MaterialStateProperty.all(false),
           interactive: false,
-          thickness: MaterialStateProperty.all(2.0),
+          thickness: MaterialStateProperty.all(4.0),
           radius: Radius.circular(12.0),
           thumbColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.dragged)) {
-              return Color(4294916666);
+              return Color(4282006074);
             }
             if (states.contains(MaterialState.hovered)) {
-              return Color(4294916666);
+              return Color(4282006074);
             }
-            return Color(4294916666);
+            return Color(4282006074);
           }),
         ),
       ),

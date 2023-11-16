@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -74,6 +75,35 @@ class FFAppState extends ChangeNotifier {
   String get modelName => _modelName;
   set modelName(String _value) {
     _modelName = _value;
+  }
+
+  List<QuestionStruct> _questionSet = [];
+  List<QuestionStruct> get questionSet => _questionSet;
+  set questionSet(List<QuestionStruct> _value) {
+    _questionSet = _value;
+  }
+
+  void addToQuestionSet(QuestionStruct _value) {
+    _questionSet.add(_value);
+  }
+
+  void removeFromQuestionSet(QuestionStruct _value) {
+    _questionSet.remove(_value);
+  }
+
+  void removeAtIndexFromQuestionSet(int _index) {
+    _questionSet.removeAt(_index);
+  }
+
+  void updateQuestionSetAtIndex(
+    int _index,
+    QuestionStruct Function(QuestionStruct) updateFn,
+  ) {
+    _questionSet[_index] = updateFn(_questionSet[_index]);
+  }
+
+  void insertAtIndexInQuestionSet(int _index, QuestionStruct _value) {
+    _questionSet.insert(_index, _value);
   }
 }
 

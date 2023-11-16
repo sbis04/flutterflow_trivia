@@ -219,7 +219,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 26.0),
+                                0.0, 0.0, 0.0, 24.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 logFirebaseEvent(
@@ -281,59 +281,118 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                               showLoadingIndicator: false,
                             ),
                           ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              logFirebaseEvent(
-                                  'CREATE_JOIN_SCREEN_JOIN_GAME_BTN_ON_TAP');
-                              FFAppState().update(() {
-                                FFAppState().isVerifyPressed = false;
-                              });
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                barrierColor: Color(0x00000000),
-                                context: context,
-                                builder: (context) {
-                                  return GestureDetector(
-                                    onTap: () => _model
-                                            .unfocusNode.canRequestFocus
-                                        ? FocusScope.of(context)
-                                            .requestFocus(_model.unfocusNode)
-                                        : FocusScope.of(context).unfocus(),
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: JoinGameWidget(),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 16.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                logFirebaseEvent(
+                                    'CREATE_JOIN_SCREEN_JOIN_GAME_BTN_ON_TAP');
+                                FFAppState().update(() {
+                                  FFAppState().isVerifyPressed = false;
+                                });
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  barrierColor: Color(0x00000000),
+                                  context: context,
+                                  builder: (context) {
+                                    return GestureDetector(
+                                      onTap: () => _model
+                                              .unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: JoinGameWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
+                              },
+                              text: 'Join Game',
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 55.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: Colors.white,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.normal,
                                     ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
-                            },
-                            text: 'Join Game',
-                            options: FFButtonOptions(
-                              width: double.infinity,
-                              height: 55.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: Colors.white,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              elevation: 2.0,
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
+                                elevation: 2.0,
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
-                              borderRadius: BorderRadius.circular(12.0),
+                              showLoadingIndicator: false,
                             ),
-                            showLoadingIndicator: false,
                           ),
+                          if (valueOrDefault<bool>(
+                              currentUserDocument?.isAdmin, false))
+                            AuthUserStreamWidget(
+                              builder: (context) => Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Divider(
+                                    thickness: 2.0,
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 16.0, 0.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () {
+                                        print('Button pressed ...');
+                                      },
+                                      text: 'Create Question Set',
+                                      options: FFButtonOptions(
+                                        width: double.infinity,
+                                        height: 60.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent3,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              fontSize: 24.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                        elevation: 0.0,
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      showLoadingIndicator: false,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           Spacer(),
                           Image.asset(
                             'assets/images/trivia_logo_white_high_res.png',
@@ -529,7 +588,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 0.0, 26.0),
+                                                        0.0, 0.0, 0.0, 24.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     logFirebaseEvent(
@@ -611,56 +670,153 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                   showLoadingIndicator: false,
                                                 ),
                                               ),
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  logFirebaseEvent(
-                                                      'CREATE_JOIN_SCREEN_JOIN_GAME_BTN_ON_TAP');
-                                                  FFAppState().update(() {
-                                                    FFAppState()
-                                                            .isVerifyPressed =
-                                                        false;
-                                                    FFAppState().isJoinning =
-                                                        true;
-                                                  });
-                                                },
-                                                text: 'Join Game',
-                                                options: FFButtonOptions(
-                                                  width: double.infinity,
-                                                  height: 60.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: Colors.white,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 16.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    logFirebaseEvent(
+                                                        'CREATE_JOIN_SCREEN_JOIN_GAME_BTN_ON_TAP');
+                                                    FFAppState().update(() {
+                                                      FFAppState()
+                                                              .isVerifyPressed =
+                                                          false;
+                                                      FFAppState().isJoinning =
+                                                          true;
+                                                    });
+                                                  },
+                                                  text: 'Join Game',
+                                                  options: FFButtonOptions(
+                                                    width: double.infinity,
+                                                    height: 60.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: Colors.white,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 24.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                    elevation: 2.0,
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                  ),
+                                                  showLoadingIndicator: false,
+                                                ),
+                                              ),
+                                              if (valueOrDefault<bool>(
+                                                  currentUserDocument?.isAdmin,
+                                                  false))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Divider(
+                                                        thickness: 2.0,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primary,
-                                                        fontSize: 24.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
+                                                                .accent1,
                                                       ),
-                                                  elevation: 2.0,
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 2.0,
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: FFButtonWidget(
+                                                          onPressed: () async {
+                                                            logFirebaseEvent(
+                                                                'CREATE_JOIN_SCREEN_CREATE_QUESTION_SET_B');
+
+                                                            context.pushNamed(
+                                                                'QuestionSetPage');
+                                                          },
+                                                          text:
+                                                              'Create Question Set',
+                                                          options:
+                                                              FFButtonOptions(
+                                                            width:
+                                                                double.infinity,
+                                                            height: 60.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .accent3,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          24.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                    ),
+                                                            elevation: 0.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              width: 2.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                          ),
+                                                          showLoadingIndicator:
+                                                              false,
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
                                                 ),
-                                                showLoadingIndicator: false,
-                                              ),
                                             ],
                                           ),
                                         if (FFAppState().isJoinning)

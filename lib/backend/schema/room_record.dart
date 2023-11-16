@@ -41,12 +41,18 @@ class RoomRecord extends FirestoreRecord {
   DateTime? get createdAt => _createdAt;
   bool hasCreatedAt() => _createdAt != null;
 
+  // "question_set" field.
+  DocumentReference? _questionSet;
+  DocumentReference? get questionSet => _questionSet;
+  bool hasQuestionSet() => _questionSet != null;
+
   void _initializeFields() {
     _code = castToType<int>(snapshotData['code']);
     _host = snapshotData['host'] as String?;
     _words = getDataList(snapshotData['words']);
     _isStarted = snapshotData['is_started'] as bool?;
     _createdAt = snapshotData['created_at'] as DateTime?;
+    _questionSet = snapshotData['question_set'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -87,6 +93,7 @@ Map<String, dynamic> createRoomRecordData({
   String? host,
   bool? isStarted,
   DateTime? createdAt,
+  DocumentReference? questionSet,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -94,6 +101,7 @@ Map<String, dynamic> createRoomRecordData({
       'host': host,
       'is_started': isStarted,
       'created_at': createdAt,
+      'question_set': questionSet,
     }.withoutNulls,
   );
 
@@ -110,12 +118,13 @@ class RoomRecordDocumentEquality implements Equality<RoomRecord> {
         e1?.host == e2?.host &&
         listEquality.equals(e1?.words, e2?.words) &&
         e1?.isStarted == e2?.isStarted &&
-        e1?.createdAt == e2?.createdAt;
+        e1?.createdAt == e2?.createdAt &&
+        e1?.questionSet == e2?.questionSet;
   }
 
   @override
-  int hash(RoomRecord? e) => const ListEquality()
-      .hash([e?.code, e?.host, e?.words, e?.isStarted, e?.createdAt]);
+  int hash(RoomRecord? e) => const ListEquality().hash(
+      [e?.code, e?.host, e?.words, e?.isStarted, e?.createdAt, e?.questionSet]);
 
   @override
   bool isValidKey(Object? o) => o is RoomRecord;
