@@ -144,6 +144,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'questionAddPage',
               requireAuth: true,
               builder: (context, params) => QuestionAddPageWidget(),
+            ),
+            FFRoute(
+              name: 'QuestionEditPage',
+              path: 'questionEditPage',
+              requireAuth: true,
+              builder: (context, params) => QuestionEditPageWidget(
+                questionSetRef: params.getParam('questionSetRef',
+                    ParamType.DocumentReference, false, ['question_sets']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

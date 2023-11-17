@@ -231,6 +231,8 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                           isReady: true,
                           createdAt: getCurrentTimestamp,
                           email: currentUserEmail,
+                          score: 0,
+                          answeredIndex: -1,
                         ));
                         _model.playerDocument =
                             PlayersRecord.getDocumentFromData(
@@ -240,6 +242,8 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                                   isReady: true,
                                   createdAt: getCurrentTimestamp,
                                   email: currentUserEmail,
+                                  score: 0,
+                                  answeredIndex: -1,
                                 ),
                                 playersRecordReference);
 

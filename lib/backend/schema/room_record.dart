@@ -46,6 +46,11 @@ class RoomRecord extends FirestoreRecord {
   DocumentReference? get questionSet => _questionSet;
   bool hasQuestionSet() => _questionSet != null;
 
+  // "current_question_index" field.
+  int? _currentQuestionIndex;
+  int get currentQuestionIndex => _currentQuestionIndex ?? 0;
+  bool hasCurrentQuestionIndex() => _currentQuestionIndex != null;
+
   void _initializeFields() {
     _code = castToType<int>(snapshotData['code']);
     _host = snapshotData['host'] as String?;
@@ -53,6 +58,8 @@ class RoomRecord extends FirestoreRecord {
     _isStarted = snapshotData['is_started'] as bool?;
     _createdAt = snapshotData['created_at'] as DateTime?;
     _questionSet = snapshotData['question_set'] as DocumentReference?;
+    _currentQuestionIndex =
+        castToType<int>(snapshotData['current_question_index']);
   }
 
   static CollectionReference get collection =>
@@ -94,6 +101,7 @@ Map<String, dynamic> createRoomRecordData({
   bool? isStarted,
   DateTime? createdAt,
   DocumentReference? questionSet,
+  int? currentQuestionIndex,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -102,6 +110,7 @@ Map<String, dynamic> createRoomRecordData({
       'is_started': isStarted,
       'created_at': createdAt,
       'question_set': questionSet,
+      'current_question_index': currentQuestionIndex,
     }.withoutNulls,
   );
 
@@ -119,12 +128,20 @@ class RoomRecordDocumentEquality implements Equality<RoomRecord> {
         listEquality.equals(e1?.words, e2?.words) &&
         e1?.isStarted == e2?.isStarted &&
         e1?.createdAt == e2?.createdAt &&
-        e1?.questionSet == e2?.questionSet;
+        e1?.questionSet == e2?.questionSet &&
+        e1?.currentQuestionIndex == e2?.currentQuestionIndex;
   }
 
   @override
-  int hash(RoomRecord? e) => const ListEquality().hash(
-      [e?.code, e?.host, e?.words, e?.isStarted, e?.createdAt, e?.questionSet]);
+  int hash(RoomRecord? e) => const ListEquality().hash([
+        e?.code,
+        e?.host,
+        e?.words,
+        e?.isStarted,
+        e?.createdAt,
+        e?.questionSet,
+        e?.currentQuestionIndex
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is RoomRecord;

@@ -605,6 +605,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                       host: currentUserUid,
                                                       createdAt:
                                                           getCurrentTimestamp,
+                                                      currentQuestionIndex: -1,
                                                     ));
                                                     _model.roomDetails = RoomRecord
                                                         .getDocumentFromData(
@@ -615,6 +616,8 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                   currentUserUid,
                                                               createdAt:
                                                                   getCurrentTimestamp,
+                                                              currentQuestionIndex:
+                                                                  -1,
                                                             ),
                                                             roomRecordReference);
 
@@ -1256,6 +1259,9 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                     getCurrentTimestamp,
                                                                 email:
                                                                     currentUserEmail,
+                                                                score: 0,
+                                                                answeredIndex:
+                                                                    -1,
                                                               ));
                                                               _model.playerDocumentJoin =
                                                                   PlayersRecord
@@ -1271,6 +1277,10 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                                 getCurrentTimestamp,
                                                                             email:
                                                                                 currentUserEmail,
+                                                                            score:
+                                                                                0,
+                                                                            answeredIndex:
+                                                                                -1,
                                                                           ),
                                                                           playersRecordReference);
 

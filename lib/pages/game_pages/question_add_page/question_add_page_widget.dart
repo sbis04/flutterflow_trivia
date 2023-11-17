@@ -1,6 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/empty_widgets/empty_question_large/empty_question_large_widget.dart';
 import '/components/question_add_large/question_add_large_widget.dart';
 import '/components/question_view_large/question_view_large_widget.dart';
+import '/components/save_question_set_dialog/save_question_set_dialog_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -98,7 +100,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                 ),
                 elevation: 8.0,
                 label: Text(
-                  'Add',
+                  'Add Question',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -217,28 +219,100 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 16.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'Trivia',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        'Trivia',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Lobster',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              fontSize: 42.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Builder(
+                                      builder: (context) => FFButtonWidget(
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'QUESTION_ADD_SAVE_QUESTION_SET_BTN_ON_TA');
+                                          await showAlignedDialog(
+                                            barrierColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .accent2,
+                                            context: context,
+                                            isGlobal: true,
+                                            avoidOverflow: false,
+                                            targetAnchor: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            followerAnchor:
+                                                AlignmentDirectional(0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
+                                            builder: (dialogContext) {
+                                              return Material(
+                                                color: Colors.transparent,
+                                                child: GestureDetector(
+                                                  onTap: () => _model
+                                                          .unfocusNode
+                                                          .canRequestFocus
+                                                      ? FocusScope.of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode)
+                                                      : FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child:
+                                                      SaveQuestionSetDialogWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then((value) => setState(() {}));
+                                        },
+                                        text: 'Save Question Set',
+                                        icon: Icon(
+                                          Icons.save_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          size: 15.0,
+                                        ),
+                                        options: FFButtonOptions(
+                                          height: 50.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyLarge
                                               .override(
-                                                fontFamily: 'Lobster',
+                                                fontFamily: 'Poppins',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 42.0,
+                                                        .primaryBackground,
+                                                fontWeight: FontWeight.w600,
                                               ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -324,6 +398,9 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                 builder: (context) {
                                   final questionList =
                                       FFAppState().questionSet.toList();
+                                  if (questionList.isEmpty) {
+                                    return EmptyQuestionLargeWidget();
+                                  }
                                   return ListView.separated(
                                     padding: EdgeInsets.fromLTRB(
                                       0,
