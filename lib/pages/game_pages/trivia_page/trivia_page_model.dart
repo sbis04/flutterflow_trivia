@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/components/question_view_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -14,13 +14,18 @@ class TriviaPageModel extends FlutterFlowModel<TriviaPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for QuestionView component.
+  late QuestionViewModel questionViewModel;
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    questionViewModel = createModel(context, () => QuestionViewModel());
+  }
 
   void dispose() {
     unfocusNode.dispose();
+    questionViewModel.dispose();
   }
 
   /// Action blocks are added here.

@@ -347,6 +347,8 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                     isReady: true,
                                     createdAt: getCurrentTimestamp,
                                     email: currentUserEmail,
+                                    score: 0,
+                                    answeredIndex: -1,
                                   ));
                                   _model.playerDocumentJoinSmall =
                                       PlayersRecord.getDocumentFromData(
@@ -356,6 +358,8 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                             isReady: true,
                                             createdAt: getCurrentTimestamp,
                                             email: currentUserEmail,
+                                            score: 0,
+                                            answeredIndex: -1,
                                           ),
                                           playersRecordReference);
 
@@ -701,6 +705,8 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                                     createdAt:
                                                         getCurrentTimestamp,
                                                     email: currentUserEmail,
+                                                    score: 0,
+                                                    answeredIndex: -1,
                                                   ));
                                                   _model.playerDocumentJoin =
                                                       PlayersRecord.getDocumentFromData(
@@ -713,6 +719,8 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                                                 getCurrentTimestamp,
                                                             email:
                                                                 currentUserEmail,
+                                                            score: 0,
+                                                            answeredIndex: -1,
                                                           ),
                                                           playersRecordReference);
 

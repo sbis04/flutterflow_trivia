@@ -8,6 +8,7 @@ import 'schema/util/firestore_util.dart';
 import 'schema/room_record.dart';
 import 'schema/players_record.dart';
 import 'schema/users_record.dart';
+import 'schema/question_sets_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,6 +19,7 @@ export 'schema/util/schema_util.dart';
 export 'schema/room_record.dart';
 export 'schema/players_record.dart';
 export 'schema/users_record.dart';
+export 'schema/question_sets_record.dart';
 
 /// Functions to query RoomRecords (as a Stream and as a Future).
 Future<int> queryRoomRecordCount({
@@ -128,6 +130,43 @@ Future<List<UsersRecord>> queryUsersRecordOnce({
     queryCollectionOnce(
       UsersRecord.collection,
       UsersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query QuestionSetsRecords (as a Stream and as a Future).
+Future<int> queryQuestionSetsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      QuestionSetsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<QuestionSetsRecord>> queryQuestionSetsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      QuestionSetsRecord.collection,
+      QuestionSetsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<QuestionSetsRecord>> queryQuestionSetsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      QuestionSetsRecord.collection,
+      QuestionSetsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

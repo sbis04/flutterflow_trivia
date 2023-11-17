@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -130,6 +131,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               requireAuth: true,
               builder: (context, params) => RoomJoinScreenWidget(
                 roomCode: params.getParam('roomCode', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'QuestionSetPage',
+              path: 'questionSetPage',
+              requireAuth: true,
+              builder: (context, params) => QuestionSetPageWidget(),
+            ),
+            FFRoute(
+              name: 'QuestionAddPage',
+              path: 'questionAddPage',
+              requireAuth: true,
+              builder: (context, params) => QuestionAddPageWidget(),
+            ),
+            FFRoute(
+              name: 'QuestionEditPage',
+              path: 'questionEditPage',
+              requireAuth: true,
+              builder: (context, params) => QuestionEditPageWidget(
+                questionSetRef: params.getParam('questionSetRef',
+                    ParamType.DocumentReference, false, ['question_sets']),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),

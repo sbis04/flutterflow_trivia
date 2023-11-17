@@ -1,11 +1,13 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/admin_login_dialog/admin_login_dialog_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -618,220 +620,321 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                       ),
                                     ),
                                   ),
-                                  Builder(
-                                    builder: (context) {
-                                      if (widget.roomCode == null) {
-                                        return Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 60.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              logFirebaseEvent(
-                                                  'START_SCREEN_GetStartedButtonSmall_ON_TA');
-                                              if (_model.formKey2
-                                                          .currentState ==
-                                                      null ||
-                                                  !_model.formKey2.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user = await authManager
-                                                  .signInAnonymously(context);
-                                              if (user == null) {
-                                                return;
-                                              }
-
-                                              await currentUserReference!
-                                                  .update(createUsersRecordData(
-                                                displayName: _model
-                                                    .nameFieldSmallController
-                                                    .text,
-                                                email: _model
-                                                    .emailFieldSmallController
-                                                    .text,
-                                              ));
-
-                                              context.goNamedAuth(
-                                                'CreateJoinScreen',
-                                                context.mounted,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 60.0),
+                                    child: Builder(
+                                      builder: (context) {
+                                        if (widget.roomCode == null) {
+                                          return Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Builder(
+                                                builder: (context) => Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    borderRadius: 12.0,
+                                                    borderWidth: 2.0,
+                                                    buttonSize: 55.0,
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent50,
+                                                    icon: Icon(
+                                                      Icons
+                                                          .admin_panel_settings_outlined,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      size: 32.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'START_SCREEN_admin_panel_settings_outlin');
+                                                      await showAlignedDialog(
+                                                        barrierColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent1,
+                                                        context: context,
+                                                        isGlobal: true,
+                                                        avoidOverflow: false,
+                                                        targetAnchor:
+                                                            AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        followerAnchor:
+                                                            AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Material(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                GestureDetector(
+                                                              onTap: () => _model
+                                                                      .unfocusNode
+                                                                      .canRequestFocus
+                                                                  ? FocusScope.of(
+                                                                          context)
+                                                                      .requestFocus(
+                                                                          _model
+                                                                              .unfocusNode)
+                                                                  : FocusScope.of(
+                                                                          context)
+                                                                      .unfocus(),
+                                                              child:
+                                                                  AdminLoginDialogWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    },
                                                   ),
-                                                },
-                                              );
-                                            },
-                                            text: 'Get Started',
-                                            options: FFButtonOptions(
-                                              width: double.infinity,
-                                              height: 55.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Poppins',
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    logFirebaseEvent(
+                                                        'START_SCREEN_GetStartedButtonSmall_ON_TA');
+                                                    if (_model.formKey2
+                                                                .currentState ==
+                                                            null ||
+                                                        !_model.formKey2
+                                                            .currentState!
+                                                            .validate()) {
+                                                      return;
+                                                    }
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent();
+                                                    final user =
+                                                        await authManager
+                                                            .signInAnonymously(
+                                                                context);
+                                                    if (user == null) {
+                                                      return;
+                                                    }
+
+                                                    await currentUserReference!
+                                                        .update(
+                                                            createUsersRecordData(
+                                                      displayName: _model
+                                                          .nameFieldSmallController
+                                                          .text,
+                                                      email: _model
+                                                          .emailFieldSmallController
+                                                          .text,
+                                                    ));
+
+                                                    context.goNamedAuth(
+                                                      'CreateJoinScreen',
+                                                      context.mounted,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
+                                                  text: 'Get Started',
+                                                  options: FFButtonOptions(
+                                                    height: 55.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primary,
-                                                    fontSize: 20.0,
-                                                    fontWeight: FontWeight.w500,
+                                                        .primaryBtnText,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    elevation: 2.0,
+                                                    borderSide: BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
                                                   ),
-                                              elevation: 2.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
+                                                ).animateOnPageLoad(animationsMap[
+                                                    'buttonOnPageLoadAnimation1']!),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                            ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'buttonOnPageLoadAnimation1']!),
-                                        );
-                                      } else {
-                                        return Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 60.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              logFirebaseEvent(
-                                                  'START_SCREEN_PAGE_JoinButtonSmall_ON_TAP');
-                                              if (_model.formKey2
-                                                          .currentState ==
-                                                      null ||
-                                                  !_model.formKey2.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user = await authManager
-                                                  .signInAnonymously(context);
-                                              if (user == null) {
-                                                return;
-                                              }
+                                            ],
+                                          );
+                                        } else {
+                                          return Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 60.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                logFirebaseEvent(
+                                                    'START_SCREEN_PAGE_JoinButtonSmall_ON_TAP');
+                                                if (_model.formKey2
+                                                            .currentState ==
+                                                        null ||
+                                                    !_model
+                                                        .formKey2.currentState!
+                                                        .validate()) {
+                                                  return;
+                                                }
+                                                GoRouter.of(context)
+                                                    .prepareAuthEvent();
+                                                final user = await authManager
+                                                    .signInAnonymously(context);
+                                                if (user == null) {
+                                                  return;
+                                                }
 
-                                              await currentUserReference!
-                                                  .update(createUsersRecordData(
-                                                displayName: _model
-                                                    .nameFieldSmallController
-                                                    .text,
-                                                email: _model
-                                                    .emailFieldSmallController
-                                                    .text,
-                                              ));
+                                                await currentUserReference!
+                                                    .update(
+                                                        createUsersRecordData(
+                                                  displayName: _model
+                                                      .nameFieldSmallController
+                                                      .text,
+                                                  email: _model
+                                                      .emailFieldSmallController
+                                                      .text,
+                                                ));
 
-                                              var playersRecordReference =
-                                                  PlayersRecord.createDoc(
-                                                      _model.room!.reference);
-                                              await playersRecordReference
-                                                  .set(createPlayersRecordData(
-                                                name: currentUserDisplayName,
-                                                uid: currentUserUid,
-                                              ));
-                                              _model.playerDocumentJoinSmall =
-                                                  PlayersRecord.getDocumentFromData(
-                                                      createPlayersRecordData(
-                                                        name:
-                                                            currentUserDisplayName,
-                                                        uid: currentUserUid,
+                                                var playersRecordReference =
+                                                    PlayersRecord.createDoc(
+                                                        _model.room!.reference);
+                                                await playersRecordReference
+                                                    .set(
+                                                        createPlayersRecordData(
+                                                  name: currentUserDisplayName,
+                                                  uid: currentUserUid,
+                                                ));
+                                                _model.playerDocumentJoinSmall =
+                                                    PlayersRecord.getDocumentFromData(
+                                                        createPlayersRecordData(
+                                                          name:
+                                                              currentUserDisplayName,
+                                                          uid: currentUserUid,
+                                                        ),
+                                                        playersRecordReference);
+                                                if (_model.room?.host ==
+                                                    currentUserUid) {
+                                                  context.goNamedAuth(
+                                                    'HostPage',
+                                                    context.mounted,
+                                                    queryParameters: {
+                                                      'roomDetails':
+                                                          serializeParam(
+                                                        _model.room?.reference,
+                                                        ParamType
+                                                            .DocumentReference,
                                                       ),
-                                                      playersRecordReference);
-                                              if (_model.room?.host ==
-                                                  currentUserUid) {
-                                                context.goNamedAuth(
-                                                  'HostPage',
-                                                  context.mounted,
-                                                  queryParameters: {
-                                                    'roomDetails':
-                                                        serializeParam(
-                                                      _model.room?.reference,
-                                                      ParamType
-                                                          .DocumentReference,
-                                                    ),
-                                                  }.withoutNulls,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .rightToLeft,
-                                                    ),
-                                                  },
-                                                );
-                                              } else {
-                                                context.goNamedAuth(
-                                                  'TriviaPage',
-                                                  context.mounted,
-                                                  queryParameters: {
-                                                    'roomCode': serializeParam(
-                                                      widget.roomCode,
-                                                      ParamType.int,
-                                                    ),
-                                                  }.withoutNulls,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .rightToLeft,
-                                                    ),
-                                                  },
-                                                );
-                                              }
+                                                    }.withoutNulls,
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .rightToLeft,
+                                                      ),
+                                                    },
+                                                  );
+                                                } else {
+                                                  context.goNamedAuth(
+                                                    'TriviaPage',
+                                                    context.mounted,
+                                                    queryParameters: {
+                                                      'roomCode':
+                                                          serializeParam(
+                                                        widget.roomCode,
+                                                        ParamType.int,
+                                                      ),
+                                                    }.withoutNulls,
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .rightToLeft,
+                                                      ),
+                                                    },
+                                                  );
+                                                }
 
-                                              setState(() {});
-                                            },
-                                            text: 'Join Room',
-                                            options: FFButtonOptions(
-                                              width: double.infinity,
-                                              height: 55.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    fontSize: 20.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                              elevation: 2.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
+                                                setState(() {});
+                                              },
+                                              text: 'Join Room',
+                                              options: FFButtonOptions(
+                                                width: double.infinity,
+                                                height: 55.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                elevation: 2.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                            ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'buttonOnPageLoadAnimation2']!),
-                                        );
-                                      }
-                                    },
+                                            ).animateOnPageLoad(animationsMap[
+                                                'buttonOnPageLoadAnimation2']!),
+                                          );
+                                        }
+                                      },
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1259,120 +1362,210 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                               ),
                                             ),
                                           ),
-                                          Builder(
-                                            builder: (context) {
-                                              if (widget.roomCode == null) {
-                                                return Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 60.0),
-                                                  child: FFButtonWidget(
-                                                    onPressed: () async {
-                                                      logFirebaseEvent(
-                                                          'START_SCREEN_GetStartedButton_ON_TAP');
-                                                      if (_model.formKey1
-                                                                  .currentState ==
-                                                              null ||
-                                                          !_model.formKey1
-                                                              .currentState!
-                                                              .validate()) {
-                                                        return;
-                                                      }
-                                                      GoRouter.of(context)
-                                                          .prepareAuthEvent();
-                                                      final user =
-                                                          await authManager
-                                                              .signInAnonymously(
-                                                                  context);
-                                                      if (user == null) {
-                                                        return;
-                                                      }
-
-                                                      await currentUserReference!
-                                                          .update(
-                                                              createUsersRecordData(
-                                                        displayName: _model
-                                                            .nameFieldLargeController
-                                                            .text,
-                                                        email: _model
-                                                            .emailFieldLargeController
-                                                            .text,
-                                                      ));
-
-                                                      context.goNamedAuth(
-                                                        'CreateJoinScreen',
-                                                        context.mounted,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .rightToLeft,
-                                                          ),
-                                                        },
-                                                      );
-                                                    },
-                                                    text: 'Get Started',
-                                                    options: FFButtonOptions(
-                                                      width: double.infinity,
-                                                      height: 60.0,
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBtnText,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 60.0),
+                                            child: Builder(
+                                              builder: (context) {
+                                                if (widget.roomCode == null) {
+                                                  return Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Builder(
+                                                        builder: (context) =>
+                                                            Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
+                                                          child:
+                                                              FlutterFlowIconButton(
+                                                            borderColor:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primary,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                      elevation: 2.0,
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1.0,
+                                                                    .primaryBackground,
+                                                            borderRadius: 12.0,
+                                                            borderWidth: 2.0,
+                                                            buttonSize: 55.0,
+                                                            fillColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent50,
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .admin_panel_settings_outlined,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              size: 32.0,
+                                                            ),
+                                                            onPressed:
+                                                                () async {
+                                                              logFirebaseEvent(
+                                                                  'START_SCREEN_admin_panel_settings_outlin');
+                                                              await showAlignedDialog(
+                                                                barrierColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent1,
+                                                                context:
+                                                                    context,
+                                                                isGlobal: true,
+                                                                avoidOverflow:
+                                                                    false,
+                                                                targetAnchor:
+                                                                    AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0)
+                                                                        .resolve(
+                                                                            Directionality.of(context)),
+                                                                followerAnchor:
+                                                                    AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0)
+                                                                        .resolve(
+                                                                            Directionality.of(context)),
+                                                                builder:
+                                                                    (dialogContext) {
+                                                                  return Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        GestureDetector(
+                                                                      onTap: () => _model
+                                                                              .unfocusNode
+                                                                              .canRequestFocus
+                                                                          ? FocusScope.of(context).requestFocus(_model
+                                                                              .unfocusNode)
+                                                                          : FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          AdminLoginDialogWidget(),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ).then((value) =>
+                                                                  setState(
+                                                                      () {}));
+                                                            },
+                                                          ),
+                                                        ),
                                                       ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                    ),
-                                                  ).animateOnPageLoad(animationsMap[
-                                                      'buttonOnPageLoadAnimation3']!),
-                                                );
-                                              } else {
-                                                return Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 60.0),
-                                                  child: FFButtonWidget(
+                                                      Expanded(
+                                                        child: FFButtonWidget(
+                                                          onPressed: () async {
+                                                            logFirebaseEvent(
+                                                                'START_SCREEN_GetStartedButton_ON_TAP');
+                                                            if (_model.formKey1
+                                                                        .currentState ==
+                                                                    null ||
+                                                                !_model.formKey1
+                                                                    .currentState!
+                                                                    .validate()) {
+                                                              return;
+                                                            }
+                                                            GoRouter.of(context)
+                                                                .prepareAuthEvent();
+                                                            final user =
+                                                                await authManager
+                                                                    .signInAnonymously(
+                                                                        context);
+                                                            if (user == null) {
+                                                              return;
+                                                            }
+
+                                                            await currentUserReference!
+                                                                .update(
+                                                                    createUsersRecordData(
+                                                              displayName: _model
+                                                                  .nameFieldLargeController
+                                                                  .text,
+                                                              email: _model
+                                                                  .emailFieldLargeController
+                                                                  .text,
+                                                            ));
+
+                                                            context.goNamedAuth(
+                                                              'CreateJoinScreen',
+                                                              context.mounted,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .rightToLeft,
+                                                                ),
+                                                              },
+                                                            );
+                                                          },
+                                                          text: 'Get Started',
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 60.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBtnText,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          24.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                            elevation: 2.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                          ),
+                                                        ).animateOnPageLoad(
+                                                            animationsMap[
+                                                                'buttonOnPageLoadAnimation3']!),
+                                                      ),
+                                                    ],
+                                                  );
+                                                } else {
+                                                  return FFButtonWidget(
                                                     onPressed: () async {
                                                       logFirebaseEvent(
-                                                          'START_SCREEN_GetStartedButton_ON_TAP');
+                                                          'START_SCREEN_PAGE_JoinRoomButton_ON_TAP');
                                                       if (_model.formKey1
                                                                   .currentState ==
                                                               null ||
@@ -1474,10 +1667,10 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                               12.0),
                                                     ),
                                                   ).animateOnPageLoad(animationsMap[
-                                                      'buttonOnPageLoadAnimation4']!),
-                                                );
-                                              }
-                                            },
+                                                      'buttonOnPageLoadAnimation4']!);
+                                                }
+                                              },
+                                            ),
                                           ),
                                         ],
                                       ),

@@ -12,7 +12,20 @@
           "package_name": "io.flutterflow.trivia"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "591384356871-thq913fo604lk3o3ofeaelcrt63jf7gb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.flutterflow.trivia",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "591384356871-q3dttduu1ccjadjf4pe4sfu6o833a3e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDlwQeRgUXDsm2HLvSV0T4_UoJONVYo6ns"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591384356871-q3dttduu1ccjadjf4pe4sfu6o833a3e5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "591384356871-as01r9p5pkop0mqdfgsq4h34qdkbj618.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.flutterflow.trivia"
+              }
+            }
+          ]
         }
       }
     }

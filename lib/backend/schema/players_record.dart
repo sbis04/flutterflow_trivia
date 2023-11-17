@@ -41,6 +41,16 @@ class PlayersRecord extends FirestoreRecord {
   String get email => _email ?? '';
   bool hasEmail() => _email != null;
 
+  // "score" field.
+  int? _score;
+  int get score => _score ?? 0;
+  bool hasScore() => _score != null;
+
+  // "answered_index" field.
+  int? _answeredIndex;
+  int get answeredIndex => _answeredIndex ?? 0;
+  bool hasAnsweredIndex() => _answeredIndex != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -49,6 +59,8 @@ class PlayersRecord extends FirestoreRecord {
     _isReady = snapshotData['is_ready'] as bool?;
     _createdAt = snapshotData['created_at'] as DateTime?;
     _email = snapshotData['email'] as String?;
+    _score = castToType<int>(snapshotData['score']);
+    _answeredIndex = castToType<int>(snapshotData['answered_index']);
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -96,6 +108,8 @@ Map<String, dynamic> createPlayersRecordData({
   bool? isReady,
   DateTime? createdAt,
   String? email,
+  int? score,
+  int? answeredIndex,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +118,8 @@ Map<String, dynamic> createPlayersRecordData({
       'is_ready': isReady,
       'created_at': createdAt,
       'email': email,
+      'score': score,
+      'answered_index': answeredIndex,
     }.withoutNulls,
   );
 
@@ -119,12 +135,21 @@ class PlayersRecordDocumentEquality implements Equality<PlayersRecord> {
         e1?.uid == e2?.uid &&
         e1?.isReady == e2?.isReady &&
         e1?.createdAt == e2?.createdAt &&
-        e1?.email == e2?.email;
+        e1?.email == e2?.email &&
+        e1?.score == e2?.score &&
+        e1?.answeredIndex == e2?.answeredIndex;
   }
 
   @override
-  int hash(PlayersRecord? e) => const ListEquality()
-      .hash([e?.name, e?.uid, e?.isReady, e?.createdAt, e?.email]);
+  int hash(PlayersRecord? e) => const ListEquality().hash([
+        e?.name,
+        e?.uid,
+        e?.isReady,
+        e?.createdAt,
+        e?.email,
+        e?.score,
+        e?.answeredIndex
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is PlayersRecord;
