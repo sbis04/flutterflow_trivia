@@ -141,8 +141,8 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(),
-                        child: FutureBuilder<QuestionSetsRecord>(
-                          future: QuestionSetsRecord.getDocumentOnce(
+                        child: StreamBuilder<QuestionSetsRecord>(
+                          stream: QuestionSetsRecord.getDocument(
                               triviaPageRoomRecord!.questionSet!),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
@@ -169,111 +169,220 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                 ))
                                   Stack(
                                     children: [
-                                      Container(
-                                        width: double.infinity,
-                                        height: double.infinity,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              valueOrDefault<String>(
-                                                containerPlayersRecord?.score
-                                                    ?.toString(),
-                                                '0',
-                                              ),
-                                              textAlign: TextAlign.center,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    fontSize: 80.0,
-                                                    fontWeight: FontWeight.w500,
-                                                    lineHeight: 1.0,
-                                                  ),
-                                            ),
-                                            Text(
-                                              'Your Score',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        fontSize: 16.0,
-                                                      ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 24.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Waiting for the next question...',
-                                                style:
+                                      Builder(
+                                        builder: (context) {
+                                          if (!triviaPageRoomRecord!
+                                              .isStarted) {
+                                            return Container(
+                                              width: double.infinity,
+                                              height: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
                                                     FlutterFlowTheme.of(context)
+                                                        .primary,
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'Waiting for the trivia session to start',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                fontSize: 22.0,
+                                                              ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        'Players are joinning...',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .barrierColor,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          } else {
+                                            return Container(
+                                              width: double.infinity,
+                                              height: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      containerPlayersRecord
+                                                          ?.score
+                                                          ?.toString(),
+                                                      '0',
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .barrierColor,
-                                                          fontSize: 16.0,
+                                                              .primaryBackground,
+                                                          fontSize: 80.0,
                                                           fontWeight:
-                                                              FontWeight.normal,
+                                                              FontWeight.w500,
+                                                          lineHeight: 1.0,
                                                         ),
+                                                  ),
+                                                  Text(
+                                                    'Your Score',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 16.0,
+                                                        ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 24.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      'Waiting for the next question...',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .barrierColor,
+                                                                fontSize: 16.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                          ],
-                                        ),
+                                            );
+                                          }
+                                        },
                                       ),
-                                      if (containerPlayersRecord
-                                              ?.answeredIndex ==
-                                          (triviaPageRoomRecord!
-                                                  .currentQuestionIndex -
-                                              1))
-                                        wrapWithModel(
-                                          model: _model.questionViewModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: QuestionViewWidget(
-                                            parameter2: triviaPageRoomRecord
-                                                ?.currentQuestionIndex,
-                                            parameter6: stackQuestionSetsRecord
-                                                .questions[triviaPageRoomRecord!
-                                                    .currentQuestionIndex]
-                                                .correctOptionIndex,
-                                            question: stackQuestionSetsRecord
-                                                .questions[triviaPageRoomRecord!
-                                                    .currentQuestionIndex]
-                                                .statement,
-                                            option1: stackQuestionSetsRecord
-                                                .questions[triviaPageRoomRecord!
-                                                    .currentQuestionIndex]
-                                                .options[0],
-                                            option2: stackQuestionSetsRecord
-                                                .questions[triviaPageRoomRecord!
-                                                    .currentQuestionIndex]
-                                                .options[1],
-                                            option3: stackQuestionSetsRecord
-                                                .questions[triviaPageRoomRecord!
-                                                    .currentQuestionIndex]
-                                                .options[2],
-                                            option4: stackQuestionSetsRecord
-                                                .questions[triviaPageRoomRecord!
-                                                    .currentQuestionIndex]
-                                                .options[3],
-                                          ),
-                                        ),
+                                      Builder(
+                                        builder: (context) {
+                                          if (containerPlayersRecord
+                                                  ?.answeredIndex ==
+                                              (triviaPageRoomRecord!
+                                                      .currentQuestionIndex -
+                                                  1)) {
+                                            return wrapWithModel(
+                                              model: _model.questionViewModel,
+                                              updateCallback: () =>
+                                                  setState(() {}),
+                                              updateOnChange: true,
+                                              child: QuestionViewWidget(
+                                                key: ValueKey(
+                                                    triviaPageRoomRecord!
+                                                        .currentQuestionIndex
+                                                        .toString()),
+                                                parameter6: stackQuestionSetsRecord
+                                                    .questions[
+                                                        triviaPageRoomRecord!
+                                                            .currentQuestionIndex]
+                                                    .correctOptionIndex,
+                                                roomCode:
+                                                    triviaPageRoomRecord?.code,
+                                                question: stackQuestionSetsRecord
+                                                    .questions[
+                                                        triviaPageRoomRecord!
+                                                            .currentQuestionIndex]
+                                                    .statement,
+                                                option1: stackQuestionSetsRecord
+                                                    .questions[
+                                                        triviaPageRoomRecord!
+                                                            .currentQuestionIndex]
+                                                    .options[0],
+                                                option2: stackQuestionSetsRecord
+                                                    .questions[
+                                                        triviaPageRoomRecord!
+                                                            .currentQuestionIndex]
+                                                    .options[1],
+                                                option3: stackQuestionSetsRecord
+                                                    .questions[
+                                                        triviaPageRoomRecord!
+                                                            .currentQuestionIndex]
+                                                    .options[2],
+                                                option4: stackQuestionSetsRecord
+                                                    .questions[
+                                                        triviaPageRoomRecord!
+                                                            .currentQuestionIndex]
+                                                    .options[3],
+                                                playerRef:
+                                                    containerPlayersRecord
+                                                        ?.reference,
+                                                currentQuestionIndex:
+                                                    triviaPageRoomRecord
+                                                        ?.currentQuestionIndex,
+                                              ),
+                                            );
+                                          } else {
+                                            return Container(
+                                              decoration: BoxDecoration(),
+                                            );
+                                          }
+                                        },
+                                      ),
                                     ],
                                   ),
                                 if (responsiveVisibility(

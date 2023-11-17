@@ -249,109 +249,262 @@ class _HostPageWidgetState extends State<HostPageWidget> {
                                     ),
                                   ],
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 16.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
+                                Builder(
+                                  builder: (context) {
+                                    if (_model.isQuestionSetSelected) {
+                                      return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 12.0),
-                                        child: Text(
-                                          'Scan the following QR code to join this trivia session:',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyLarge
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                fontSize: 14.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            width: 300.0,
-                                            height: 300.0,
-                                            child: custom_widgets.QrCodeView(
-                                              width: 300.0,
-                                              height: 300.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              data:
-                                                  'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 0.0),
-                                        child: Text(
-                                          'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 16.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 8.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                            0.0, 16.0, 0.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
-                                            Text(
-                                              'Joinning code: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 20.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                            ),
-                                            Text(
-                                              valueOrDefault<String>(
-                                                stackRoomRecord.code.toString(),
-                                                '-',
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 12.0),
+                                              child: Text(
+                                                'Scan the following QR code to join this trivia session:',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 14.0,
+                                                        ),
                                               ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Container(
+                                                  width: 300.0,
+                                                  height: 300.0,
+                                                  child:
+                                                      custom_widgets.QrCodeView(
+                                                    width: 300.0,
+                                                    height: 300.0,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    fontSize: 20.0,
-                                                    fontWeight: FontWeight.w500,
+                                                    data:
+                                                        'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
                                                   ),
+                                                ),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 12.0, 0.0, 0.0),
+                                              child: Text(
+                                                'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 12.0, 0.0, 8.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'Joinning code: ',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      stackRoomRecord.code
+                                                          .toString(),
+                                                      '-',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ],
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      );
+                                    } else {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 16.0, 0.0, 16.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            if (!_model.isQuestionSetSelected)
+                                              Text(
+                                                'Please select a question set to allow players to join this game:',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 14.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 16.0, 0.0, 0.0),
+                                              child: StreamBuilder<
+                                                  List<QuestionSetsRecord>>(
+                                                stream: queryQuestionSetsRecord(
+                                                  queryBuilder:
+                                                      (questionSetsRecord) =>
+                                                          questionSetsRecord
+                                                              .orderBy(
+                                                                  'created_at',
+                                                                  descending:
+                                                                      true),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 40.0,
+                                                        height: 40.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<QuestionSetsRecord>
+                                                      dropDownSmallQuestionSetsRecordList =
+                                                      snapshot.data!;
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropDownSmallValueController ??=
+                                                        FormFieldController<
+                                                            String>(null),
+                                                    options:
+                                                        dropDownSmallQuestionSetsRecordList
+                                                            .map((e) =>
+                                                                e.setName)
+                                                            .toList(),
+                                                    onChanged: (val) async {
+                                                      setState(() => _model
+                                                              .dropDownSmallValue =
+                                                          val);
+                                                      logFirebaseEvent(
+                                                          'HOST_DropDownSmall_ON_FORM_WIDGET_SELECT');
+
+                                                      await stackRoomRecord
+                                                          .reference
+                                                          .update(
+                                                              createRoomRecordData(
+                                                        questionSet:
+                                                            dropDownSmallQuestionSetsRecordList
+                                                                .where((e) =>
+                                                                    e.setName ==
+                                                                    _model
+                                                                        .dropDownSmallValue)
+                                                                .toList()
+                                                                .first
+                                                                .reference,
+                                                      ));
+                                                      setState(() {
+                                                        _model.isQuestionSetSelected =
+                                                            true;
+                                                      });
+                                                    },
+                                                    width: double.infinity,
+                                                    height: 60.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                    hintText:
+                                                        'Select question set...',
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 24.0,
+                                                    ),
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                    borderWidth: 2.0,
+                                                    borderRadius: 10.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 4.0,
+                                                                16.0, 4.0),
+                                                    hidesUnderline: true,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                                 Divider(
                                   thickness: 2.0,
@@ -591,170 +744,182 @@ class _HostPageWidgetState extends State<HostPageWidget> {
                                                   ],
                                                 ),
                                                 Spacer(),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    logFirebaseEvent(
-                                                        'HOST_PAGE_PAGE_Column_7xkl2izz_ON_TAP');
-                                                    setState(() {
-                                                      _model.isQrEnlarged =
-                                                          true;
-                                                    });
-                                                  },
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    24.0),
-                                                        child: Text(
-                                                          'Scan the following QR code to join this trivia session',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                fontSize: 14.0,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Container(
-                                                            width: 320.0,
-                                                            height: 320.0,
-                                                            child:
-                                                                custom_widgets
-                                                                    .QrCodeView(
-                                                              width: 320.0,
-                                                              height: 320.0,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              data:
-                                                                  'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
-                                                            ),
+                                                if (_model
+                                                    .isQuestionSetSelected)
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      logFirebaseEvent(
+                                                          'HOST_PAGE_PAGE_Column_7xkl2izz_ON_TAP');
+                                                      setState(() {
+                                                        _model.isQrEnlarged =
+                                                            true;
+                                                      });
+                                                    },
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      24.0),
+                                                          child: Text(
+                                                            'Scan the following QR code to join this trivia session',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      14.0,
+                                                                ),
                                                           ),
-                                                        ],
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
                                                         ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0,
-                                                                    16.0),
-                                                        child: Row(
+                                                        Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
                                                                   .center,
                                                           children: [
-                                                            Text(
-                                                              'Joinning code: ',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    fontSize:
-                                                                        20.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                  ),
-                                                            ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                stackRoomRecord
-                                                                    .code
-                                                                    .toString(),
-                                                                '-',
+                                                            Container(
+                                                              width: 320.0,
+                                                              height: 320.0,
+                                                              child:
+                                                                  custom_widgets
+                                                                      .QrCodeView(
+                                                                width: 320.0,
+                                                                height: 320.0,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                data:
+                                                                    'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    fontSize:
-                                                                        20.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
                                                             ),
                                                           ],
                                                         ),
-                                                      ),
-                                                    ],
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      16.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            'https://trivia.flutterflow.app/join/${stackRoomRecord.code.toString()}',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0,
+                                                                      16.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Text(
+                                                                'Joinning code: ',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontSize:
+                                                                          20.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .normal,
+                                                                    ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  stackRoomRecord
+                                                                      .code
+                                                                      .toString(),
+                                                                  '-',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          20.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                                Divider(
-                                                  height: 24.0,
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .accent4,
-                                                ),
+                                                if (!_model
+                                                    .isQuestionSetSelected)
+                                                  Text(
+                                                    'Please select a question set to allow players to join this game:',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -826,6 +991,10 @@ class _HostPageWidgetState extends State<HostPageWidget> {
                                                                 .first
                                                                 .reference,
                                                           ));
+                                                          setState(() {
+                                                            _model.isQuestionSetSelected =
+                                                                true;
+                                                          });
                                                         },
                                                         width: double.infinity,
                                                         height: 60.0,

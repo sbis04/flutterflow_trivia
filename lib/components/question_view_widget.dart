@@ -20,7 +20,7 @@ class QuestionViewWidget extends StatefulWidget {
   const QuestionViewWidget({
     Key? key,
     this.roomCode,
-    this.parameter2,
+    this.currentQuestionIndex,
     this.playerRef,
     this.question,
     this.option1,
@@ -31,7 +31,7 @@ class QuestionViewWidget extends StatefulWidget {
   }) : super(key: key);
 
   final int? roomCode;
-  final int? parameter2;
+  final int? currentQuestionIndex;
   final DocumentReference? playerRef;
   final String? question;
   final String? option1;
@@ -86,6 +86,8 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       logFirebaseEvent('QUESTION_VIEW_QuestionView_ON_INIT_STATE');
+      _model.timerController.onResetTimer();
+
       _model.timerController.onStartTimer();
     });
 
@@ -216,7 +218,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                           'QUESTION_VIEW_Timer_28ltdzqb_ON_TIMER_EN');
                       if (!_model.isOptionSelected) {
                         await widget.playerRef!.update(createPlayersRecordData(
-                          answeredIndex: widget.parameter2,
+                          answeredIndex: widget.currentQuestionIndex,
                         ));
                       }
                     },
@@ -262,7 +264,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         if (widget.parameter6 == 0) {
                           await widget.playerRef!.update({
                             ...createPlayersRecordData(
-                              answeredIndex: widget.parameter2,
+                              answeredIndex: widget.currentQuestionIndex,
                             ),
                             ...mapToFirestore(
                               {
@@ -274,7 +276,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         } else {
                           await widget.playerRef!
                               .update(createPlayersRecordData(
-                            answeredIndex: widget.parameter2,
+                            answeredIndex: widget.currentQuestionIndex,
                           ));
                         }
                       },
@@ -322,7 +324,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         if (widget.parameter6 == 1) {
                           await widget.playerRef!.update({
                             ...createPlayersRecordData(
-                              answeredIndex: widget.parameter2,
+                              answeredIndex: widget.currentQuestionIndex,
                             ),
                             ...mapToFirestore(
                               {
@@ -334,7 +336,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         } else {
                           await widget.playerRef!
                               .update(createPlayersRecordData(
-                            answeredIndex: widget.parameter2,
+                            answeredIndex: widget.currentQuestionIndex,
                           ));
                         }
                       },
@@ -382,7 +384,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         if (widget.parameter6 == 2) {
                           await widget.playerRef!.update({
                             ...createPlayersRecordData(
-                              answeredIndex: widget.parameter2,
+                              answeredIndex: widget.currentQuestionIndex,
                             ),
                             ...mapToFirestore(
                               {
@@ -394,7 +396,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         } else {
                           await widget.playerRef!
                               .update(createPlayersRecordData(
-                            answeredIndex: widget.parameter2,
+                            answeredIndex: widget.currentQuestionIndex,
                           ));
                         }
                       },
@@ -442,7 +444,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         if (widget.parameter6 == 3) {
                           await widget.playerRef!.update({
                             ...createPlayersRecordData(
-                              answeredIndex: widget.parameter2,
+                              answeredIndex: widget.currentQuestionIndex,
                             ),
                             ...mapToFirestore(
                               {
@@ -454,7 +456,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget>
                         } else {
                           await widget.playerRef!
                               .update(createPlayersRecordData(
-                            answeredIndex: widget.parameter2,
+                            answeredIndex: widget.currentQuestionIndex,
                           ));
                         }
                       },
