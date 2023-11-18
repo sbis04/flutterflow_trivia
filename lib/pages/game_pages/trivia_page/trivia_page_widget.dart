@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/question_view_widget.dart';
+import '/components/question_view/question_view_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -167,103 +167,85 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                   tabletLandscape: false,
                                   desktop: false,
                                 ))
-                                  Stack(
-                                    children: [
-                                      Builder(
-                                        builder: (context) {
-                                          if (!triviaPageRoomRecord!
-                                              .isStarted) {
-                                            return Container(
-                                              width: double.infinity,
-                                              height: double.infinity,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      'Waiting for the trivia session to start',
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                fontSize: 22.0,
-                                                              ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  16.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        'Players are joinning...',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .barrierColor,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                ),
+                                  Builder(
+                                    builder: (context) {
+                                      if (!triviaPageRoomRecord!.isStarted) {
+                                        return Container(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Waiting for the trivia session to start',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        fontSize: 22.0,
                                                       ),
-                                                    ),
-                                                  ],
                                                 ),
-                                              ),
-                                            );
-                                          } else {
-                                            return Container(
-                                              width: double.infinity,
-                                              height: double.infinity,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      containerPlayersRecord
-                                                          ?.score
-                                                          ?.toString(),
-                                                      '0',
-                                                    ),
-                                                    textAlign: TextAlign.center,
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 16.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Players are joinning...',
                                                     style: FlutterFlowTheme.of(
                                                             context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .barrierColor,
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      } else {
+                                        return Container(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  containerPlayersRecord?.score
+                                                      ?.toString(),
+                                                  '0',
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
@@ -275,11 +257,11 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                               FontWeight.w500,
                                                           lineHeight: 1.0,
                                                         ),
-                                                  ),
-                                                  Text(
-                                                    'Your Score',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
+                                              ),
+                                              Text(
+                                                'Your Score',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
@@ -288,316 +270,223 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                               .primaryBackground,
                                                           fontSize: 16.0,
                                                         ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 24.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      'Waiting for the next question...',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .barrierColor,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ],
                                               ),
-                                            );
-                                          }
-                                        },
-                                      ),
-                                      Builder(
-                                        builder: (context) {
-                                          if (containerPlayersRecord
-                                                  ?.answeredIndex ==
-                                              (triviaPageRoomRecord!
-                                                      .currentQuestionIndex -
-                                                  1)) {
-                                            return wrapWithModel(
-                                              model: _model.questionViewModel,
-                                              updateCallback: () =>
-                                                  setState(() {}),
-                                              updateOnChange: true,
-                                              child: QuestionViewWidget(
-                                                key: ValueKey(
-                                                    triviaPageRoomRecord!
-                                                        .currentQuestionIndex
-                                                        .toString()),
-                                                parameter6: stackQuestionSetsRecord
-                                                    .questions[
-                                                        triviaPageRoomRecord!
-                                                            .currentQuestionIndex]
-                                                    .correctOptionIndex,
-                                                roomCode:
-                                                    triviaPageRoomRecord?.code,
-                                                question: stackQuestionSetsRecord
-                                                    .questions[
-                                                        triviaPageRoomRecord!
-                                                            .currentQuestionIndex]
-                                                    .statement,
-                                                option1: stackQuestionSetsRecord
-                                                    .questions[
-                                                        triviaPageRoomRecord!
-                                                            .currentQuestionIndex]
-                                                    .options[0],
-                                                option2: stackQuestionSetsRecord
-                                                    .questions[
-                                                        triviaPageRoomRecord!
-                                                            .currentQuestionIndex]
-                                                    .options[1],
-                                                option3: stackQuestionSetsRecord
-                                                    .questions[
-                                                        triviaPageRoomRecord!
-                                                            .currentQuestionIndex]
-                                                    .options[2],
-                                                option4: stackQuestionSetsRecord
-                                                    .questions[
-                                                        triviaPageRoomRecord!
-                                                            .currentQuestionIndex]
-                                                    .options[3],
-                                                playerRef:
-                                                    containerPlayersRecord
-                                                        ?.reference,
-                                                currentQuestionIndex:
-                                                    triviaPageRoomRecord
-                                                        ?.currentQuestionIndex,
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 24.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Waiting for the next question...',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .barrierColor,
+                                                        fontSize: 16.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                ),
                                               ),
-                                            );
-                                          } else {
-                                            return Container(
-                                              decoration: BoxDecoration(),
-                                            );
-                                          }
-                                        },
-                                      ),
-                                    ],
+                                            ],
+                                          ),
+                                        );
+                                      }
+                                    },
                                   ),
                                 if (responsiveVisibility(
                                   context: context,
                                   phone: false,
                                   tablet: false,
                                 ))
-                                  Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          32.0, 32.0, 32.0, 32.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 16.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Text(
-                                                        'Trivia',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Lobster',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      42.0,
-                                                                ),
+                                  Builder(
+                                    builder: (context) {
+                                      if (!triviaPageRoomRecord!.isStarted) {
+                                        return Container(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Waiting for the trivia session to start',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        fontSize: 36.0,
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  16.0,
-                                                                  0.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          Text(
-                                                            'Room Code: ',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: Colors
-                                                                      .black,
-                                                                  fontSize:
-                                                                      20.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            widget.roomCode!
-                                                                .toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      20.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
                                                 ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 16.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Players are joinning...',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .barrierColor,
+                                                          fontSize: 24.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      } else {
+                                        return Container(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  containerPlayersRecord?.score
+                                                      ?.toString(),
+                                                  '0',
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 120.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          lineHeight: 1.0,
+                                                        ),
+                                              ),
+                                              Text(
+                                                'Your Score',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 36.0,
+                                                        ),
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 16.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      'Your name: ',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            color: Colors.black,
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
-                                                    ),
-                                                    Expanded(
-                                                      child:
-                                                          AuthUserStreamWidget(
-                                                        builder: (context) =>
-                                                            Text(
-                                                          currentUserDisplayName,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondary,
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
+                                                        0.0, 24.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Waiting for the next question...',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .barrierColor,
+                                                        fontSize: 24.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  16.0,
-                                                                  5.0),
-                                                      child: InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          logFirebaseEvent(
-                                                              'TRIVIA_PAGE_PAGE_Text_11ndxjzy_ON_TAP');
-
-                                                          context.goNamed(
-                                                            'CreateJoinScreen',
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .leftToRight,
-                                                              ),
-                                                            },
-                                                          );
-                                                        },
-                                                        child: Text(
-                                                          'Leave game',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
+                                        );
+                                      }
+                                    },
                                   ),
+                                Builder(
+                                  builder: (context) {
+                                    if (containerPlayersRecord?.answeredIndex ==
+                                        (triviaPageRoomRecord!
+                                                .currentQuestionIndex -
+                                            1)) {
+                                      return wrapWithModel(
+                                        model: _model.questionViewModel,
+                                        updateCallback: () => setState(() {}),
+                                        updateOnChange: true,
+                                        child: QuestionViewWidget(
+                                          key: ValueKey(triviaPageRoomRecord!
+                                              .currentQuestionIndex
+                                              .toString()),
+                                          roomCode: triviaPageRoomRecord?.code,
+                                          question: stackQuestionSetsRecord
+                                              .questions[triviaPageRoomRecord!
+                                                  .currentQuestionIndex]
+                                              .statement,
+                                          option1: stackQuestionSetsRecord
+                                              .questions[triviaPageRoomRecord!
+                                                  .currentQuestionIndex]
+                                              .options[0],
+                                          option2: stackQuestionSetsRecord
+                                              .questions[triviaPageRoomRecord!
+                                                  .currentQuestionIndex]
+                                              .options[1],
+                                          option3: stackQuestionSetsRecord
+                                              .questions[triviaPageRoomRecord!
+                                                  .currentQuestionIndex]
+                                              .options[2],
+                                          option4: stackQuestionSetsRecord
+                                              .questions[triviaPageRoomRecord!
+                                                  .currentQuestionIndex]
+                                              .options[3],
+                                          playerRef:
+                                              containerPlayersRecord?.reference,
+                                          currentQuestionIndex:
+                                              triviaPageRoomRecord
+                                                  ?.currentQuestionIndex,
+                                          questionIndex: stackQuestionSetsRecord
+                                              .questions[triviaPageRoomRecord!
+                                                  .currentQuestionIndex]
+                                              .correctOptionIndex,
+                                        ),
+                                      );
+                                    } else {
+                                      return Container(
+                                        decoration: BoxDecoration(),
+                                      );
+                                    }
+                                  },
+                                ),
                               ],
                             );
                           },

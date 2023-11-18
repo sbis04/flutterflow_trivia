@@ -406,7 +406,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                   fontFamily: 'Poppins',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
+                                                      .primaryText,
                                                   fontSize: 16.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -483,7 +483,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                 fontFamily: 'Poppins',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
+                                                        .primaryText,
                                                 fontSize: 16.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
@@ -526,7 +526,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                   fontFamily: 'Poppins',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
+                                                      .primaryText,
                                                   fontSize: 16.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -603,7 +603,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                 fontFamily: 'Poppins',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
+                                                        .primaryText,
                                                 fontSize: 16.0,
                                                 fontWeight: FontWeight.normal,
                                               ),

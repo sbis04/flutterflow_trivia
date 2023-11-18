@@ -73,6 +73,13 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Room code',
+                        labelStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.normal,
+                                ),
                         hintText: 'Enter the room code',
                         hintStyle:
                             FlutterFlowTheme.of(context).bodySmall.override(

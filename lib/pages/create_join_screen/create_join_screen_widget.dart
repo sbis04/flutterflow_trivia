@@ -1066,7 +1066,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                             cursorColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .accent3,
+                                                                    .primary,
                                                             validator: _model
                                                                 .textControllerValidator
                                                                 .asValidator(
