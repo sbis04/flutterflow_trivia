@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -6,6 +7,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'winners_page_model.dart';
@@ -112,7 +114,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 0.0),
+                                      16.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -146,7 +148,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 16.0, 0.0),
+                                            0.0, 0.0, 8.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             winnersPageRoomRecord.code
@@ -164,6 +166,23 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
+                                      ),
+                                      FlutterFlowIconButton(
+                                        borderColor: Colors.transparent,
+                                        borderRadius: 20.0,
+                                        buttonSize: 45.0,
+                                        icon: FaIcon(
+                                          FontAwesomeIcons.github,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          size: 28.0,
+                                        ),
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'WINNERS_PAGE_PAGE_github_ICN_ON_TAP');
+                                          await launchURL(
+                                              'https://github.com/sbis04/flutterflow_trivia');
+                                        },
                                       ),
                                     ],
                                   ),
@@ -424,6 +443,22 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                           ),
                                         ],
                                       ),
+                                    ),
+                                    FlutterFlowIconButton(
+                                      borderColor: Colors.transparent,
+                                      borderRadius: 20.0,
+                                      buttonSize: 55.0,
+                                      icon: FaIcon(
+                                        FontAwesomeIcons.github,
+                                        color: Colors.white,
+                                        size: 36.0,
+                                      ),
+                                      onPressed: () async {
+                                        logFirebaseEvent(
+                                            'WINNERS_PAGE_PAGE_GitHubButton_ON_TAP');
+                                        await launchURL(
+                                            'https://github.com/sbis04/flutterflow_trivia');
+                                      },
                                     ),
                                   ],
                                 ),

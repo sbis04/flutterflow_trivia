@@ -1,12 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/admin_components/answering_view/answering_view_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'trivia_page_model.dart';
@@ -201,6 +203,18 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
+                                                      Expanded(
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Container(
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                       Text(
                                                         'Leaderboard',
                                                         style:
@@ -216,6 +230,50 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                                   fontSize:
                                                                       40.0,
                                                                 ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .end,
+                                                            children: [
+                                                              FlutterFlowIconButton(
+                                                                borderColor: Colors
+                                                                    .transparent,
+                                                                borderRadius:
+                                                                    20.0,
+                                                                buttonSize:
+                                                                    45.0,
+                                                                icon: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .github,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  size: 28.0,
+                                                                ),
+                                                                onPressed:
+                                                                    () async {
+                                                                  logFirebaseEvent(
+                                                                      'TRIVIA_PAGE_PAGE_github_ICN_ON_TAP');
+                                                                  await launchURL(
+                                                                      'https://github.com/sbis04/flutterflow_trivia');
+                                                                },
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -553,13 +611,25 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 0.0, 24.0),
+                                                        24.0, 0.0, 24.0, 24.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
                                                   children: [
+                                                    Expanded(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            decoration:
+                                                                BoxDecoration(),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
                                                     Text(
                                                       'Leaderboard',
                                                       style:
@@ -574,6 +644,37 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                                     .primaryBackground,
                                                                 fontSize: 60.0,
                                                               ),
+                                                    ),
+                                                    Expanded(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          FlutterFlowIconButton(
+                                                            borderColor: Colors
+                                                                .transparent,
+                                                            borderRadius: 20.0,
+                                                            buttonSize: 55.0,
+                                                            icon: FaIcon(
+                                                              FontAwesomeIcons
+                                                                  .github,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: 36.0,
+                                                            ),
+                                                            onPressed:
+                                                                () async {
+                                                              logFirebaseEvent(
+                                                                  'TRIVIA_PAGE_PAGE_GitHubButton_ON_TAP');
+                                                              await launchURL(
+                                                                  'https://github.com/sbis04/flutterflow_trivia');
+                                                            },
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ],
                                                 ),

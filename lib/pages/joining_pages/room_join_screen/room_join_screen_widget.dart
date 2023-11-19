@@ -193,7 +193,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                 logFirebaseEvent(
                                     'ROOM_JOIN_SCREEN_PAGE_github_ICN_ON_TAP');
                                 await launchURL(
-                                    'https://github.com/sbis04/codewords_FF');
+                                    'https://github.com/sbis04/flutterflow_trivia');
                               },
                             ),
                           ],
@@ -475,7 +475,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                     logFirebaseEvent(
                                         'ROOM_JOIN_SCREEN_GitHubButton_ON_TAP');
                                     await launchURL(
-                                        'https://github.com/sbis04/codewords_FF');
+                                        'https://github.com/sbis04/flutterflow_trivia');
                                   },
                                 ),
                               ],
