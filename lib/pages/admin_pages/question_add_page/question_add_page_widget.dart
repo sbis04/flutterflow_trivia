@@ -221,16 +221,94 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 0.0, 16.0),
-                            child: Text(
-                              'Questions',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 24.0,
+                                16.0, 16.0, 16.0, 16.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Questions',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 24.0,
+                                      ),
+                                ),
+                                Builder(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'QUESTION_ADD_PAGE_PAGE_SAVE_BTN_ON_TAP');
+                                      await showAlignedDialog(
+                                        barrierColor:
+                                            FlutterFlowTheme.of(context)
+                                                .accent2,
+                                        context: context,
+                                        isGlobal: true,
+                                        avoidOverflow: false,
+                                        targetAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        followerAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        builder: (dialogContext) {
+                                          return Material(
+                                            color: Colors.transparent,
+                                            child: GestureDetector(
+                                              onTap: () => _model.unfocusNode
+                                                      .canRequestFocus
+                                                  ? FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode)
+                                                  : FocusScope.of(context)
+                                                      .unfocus(),
+                                              child:
+                                                  SaveQuestionSetDialogWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    text: 'Save',
+                                    icon: Icon(
+                                      Icons.save_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      size: 15.0,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 50.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
                                   ),
+                                ),
+                              ],
                             ),
                           ),
                           Expanded(
