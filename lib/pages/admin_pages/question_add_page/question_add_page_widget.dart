@@ -1,8 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/admin_components/question_add_bottom_sheet/question_add_bottom_sheet_widget.dart';
 import '/components/admin_components/question_add_large/question_add_large_widget.dart';
-import '/components/admin_components/question_view_large/question_view_large_widget.dart';
+import '/components/admin_components/question_view/question_view_widget.dart';
 import '/components/admin_components/save_question_set_dialog/save_question_set_dialog_widget.dart';
-import '/components/empty_widgets/empty_question_large/empty_question_large_widget.dart';
+import '/components/empty_widgets/empty_question/empty_question_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -70,28 +71,62 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
               builder: (context) => FloatingActionButton.extended(
                 onPressed: () async {
                   logFirebaseEvent('QUESTION_ADD_FloatingActionButton_0vhn7i');
-                  await showAlignedDialog(
-                    barrierColor: FlutterFlowTheme.of(context).accent1,
-                    context: context,
-                    isGlobal: true,
-                    avoidOverflow: false,
-                    targetAnchor: AlignmentDirectional(0.0, 0.0)
-                        .resolve(Directionality.of(context)),
-                    followerAnchor: AlignmentDirectional(0.0, 0.0)
-                        .resolve(Directionality.of(context)),
-                    builder: (dialogContext) {
-                      return Material(
-                        color: Colors.transparent,
-                        child: GestureDetector(
+                  if (() {
+                    if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+                      return true;
+                    } else if (MediaQuery.sizeOf(context).width <
+                        kBreakpointMedium) {
+                      return true;
+                    } else if (MediaQuery.sizeOf(context).width <
+                        kBreakpointLarge) {
+                      return false;
+                    } else {
+                      return false;
+                    }
+                  }()) {
+                    await showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      barrierColor: FlutterFlowTheme.of(context).accent1,
+                      useSafeArea: true,
+                      context: context,
+                      builder: (context) {
+                        return GestureDetector(
                           onTap: () => _model.unfocusNode.canRequestFocus
                               ? FocusScope.of(context)
                                   .requestFocus(_model.unfocusNode)
                               : FocusScope.of(context).unfocus(),
-                          child: QuestionAddLargeWidget(),
-                        ),
-                      );
-                    },
-                  ).then((value) => setState(() {}));
+                          child: Padding(
+                            padding: MediaQuery.viewInsetsOf(context),
+                            child: QuestionAddBottomSheetWidget(),
+                          ),
+                        );
+                      },
+                    ).then((value) => safeSetState(() {}));
+                  } else {
+                    await showAlignedDialog(
+                      barrierColor: FlutterFlowTheme.of(context).accent1,
+                      context: context,
+                      isGlobal: true,
+                      avoidOverflow: false,
+                      targetAnchor: AlignmentDirectional(0.0, 0.0)
+                          .resolve(Directionality.of(context)),
+                      followerAnchor: AlignmentDirectional(0.0, 0.0)
+                          .resolve(Directionality.of(context)),
+                      builder: (dialogContext) {
+                        return Material(
+                          color: Colors.transparent,
+                          child: GestureDetector(
+                            onTap: () => _model.unfocusNode.canRequestFocus
+                                ? FocusScope.of(context)
+                                    .requestFocus(_model.unfocusNode)
+                                : FocusScope.of(context).unfocus(),
+                            child: QuestionAddLargeWidget(),
+                          ),
+                        );
+                      },
+                    ).then((value) => setState(() {}));
+                  }
                 },
                 backgroundColor: FlutterFlowTheme.of(context).primary,
                 icon: Icon(
@@ -186,16 +221,131 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 0.0, 16.0),
-                            child: Text(
-                              'Add Question',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 24.0,
+                                16.0, 16.0, 16.0, 16.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Questions',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 24.0,
+                                      ),
+                                ),
+                                Builder(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'QUESTION_ADD_PAGE_PAGE_SAVE_BTN_ON_TAP');
+                                      await showAlignedDialog(
+                                        barrierColor:
+                                            FlutterFlowTheme.of(context)
+                                                .accent2,
+                                        context: context,
+                                        isGlobal: true,
+                                        avoidOverflow: false,
+                                        targetAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        followerAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        builder: (dialogContext) {
+                                          return Material(
+                                            color: Colors.transparent,
+                                            child: GestureDetector(
+                                              onTap: () => _model.unfocusNode
+                                                      .canRequestFocus
+                                                  ? FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode)
+                                                  : FocusScope.of(context)
+                                                      .unfocus(),
+                                              child:
+                                                  SaveQuestionSetDialogWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    text: 'Save',
+                                    icon: Icon(
+                                      Icons.save_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      size: 15.0,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 50.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
                                   ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              child: Builder(
+                                builder: (context) {
+                                  final questionList =
+                                      FFAppState().questionSet.toList();
+                                  if (questionList.isEmpty) {
+                                    return EmptyQuestionWidget();
+                                  }
+                                  return ListView.separated(
+                                    padding: EdgeInsets.fromLTRB(
+                                      0,
+                                      0,
+                                      0,
+                                      100.0,
+                                    ),
+                                    scrollDirection: Axis.vertical,
+                                    itemCount: questionList.length,
+                                    separatorBuilder: (_, __) =>
+                                        SizedBox(height: 16.0),
+                                    itemBuilder: (context, questionListIndex) {
+                                      final questionListItem =
+                                          questionList[questionListIndex];
+                                      return QuestionViewWidget(
+                                        key: Key(
+                                            'Key2kp_${questionListIndex}_of_${questionList.length}'),
+                                        index: questionListIndex,
+                                        question: questionListItem,
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
                             ),
                           ),
                         ],
@@ -371,23 +521,6 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                               fontSize: 24.0,
                                             ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 10.0),
-                                        child: Text(
-                                          'You can add your question and answers below. Mark the correct option using the checkbox before the field.',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 16.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                      ),
                                     ].divide(SizedBox(height: 16.0)),
                                   ),
                                 ),
@@ -399,7 +532,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                   final questionList =
                                       FFAppState().questionSet.toList();
                                   if (questionList.isEmpty) {
-                                    return EmptyQuestionLargeWidget();
+                                    return EmptyQuestionWidget();
                                   }
                                   return ListView.separated(
                                     padding: EdgeInsets.fromLTRB(
@@ -415,7 +548,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                     itemBuilder: (context, questionListIndex) {
                                       final questionListItem =
                                           questionList[questionListIndex];
-                                      return QuestionViewLargeWidget(
+                                      return QuestionViewWidget(
                                         key: Key(
                                             'Keyie6_${questionListIndex}_of_${questionList.length}'),
                                         index: questionListIndex,
