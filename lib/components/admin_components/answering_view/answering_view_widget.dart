@@ -9,11 +9,11 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'question_view_model.dart';
-export 'question_view_model.dart';
+import 'answering_view_model.dart';
+export 'answering_view_model.dart';
 
-class QuestionViewWidget extends StatefulWidget {
-  const QuestionViewWidget({
+class AnsweringViewWidget extends StatefulWidget {
+  const AnsweringViewWidget({
     Key? key,
     this.roomCode,
     this.currentQuestionIndex,
@@ -37,11 +37,11 @@ class QuestionViewWidget extends StatefulWidget {
   final String? option4;
 
   @override
-  _QuestionViewWidgetState createState() => _QuestionViewWidgetState();
+  _AnsweringViewWidgetState createState() => _AnsweringViewWidgetState();
 }
 
-class _QuestionViewWidgetState extends State<QuestionViewWidget> {
-  late QuestionViewModel _model;
+class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
+  late AnsweringViewModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -52,11 +52,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QuestionViewModel());
+    _model = createModel(context, () => AnsweringViewModel());
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      logFirebaseEvent('QUESTION_VIEW_QuestionView_ON_INIT_STATE');
+      logFirebaseEvent('ANSWERING_VIEW_AnsweringView_ON_INIT_STA');
       setState(() {
         _model.timerValue = 10;
       });
@@ -97,7 +97,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
@@ -230,7 +230,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'QUESTION_VIEW_Container_0ns8cxso_ON_TAP');
+                                  'ANSWERING_VIEW_Container_0ns8cxso_ON_TAP');
                               setState(() {
                                 _model.isOptionSelected = true;
                               });
@@ -289,7 +289,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'QUESTION_VIEW_Container_54jvko80_ON_TAP');
+                                  'ANSWERING_VIEW_Container_54jvko80_ON_TAP');
                               setState(() {
                                 _model.isOptionSelected = true;
                               });
@@ -348,7 +348,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'QUESTION_VIEW_Container_je3rokbe_ON_TAP');
+                                  'ANSWERING_VIEW_Container_je3rokbe_ON_TAP');
                               setState(() {
                                 _model.isOptionSelected = true;
                               });
@@ -407,7 +407,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               logFirebaseEvent(
-                                  'QUESTION_VIEW_Container_7lpk8sue_ON_TAP');
+                                  'ANSWERING_VIEW_Container_7lpk8sue_ON_TAP');
                               setState(() {
                                 _model.isOptionSelected = true;
                               });
@@ -618,7 +618,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'QUESTION_VIEW_Container_vc0kko5p_ON_TAP');
+                                        'ANSWERING_VIEW_Container_vc0kko5p_ON_TAP');
                                     setState(() {
                                       _model.isOptionSelected = true;
                                     });
@@ -684,7 +684,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'QUESTION_VIEW_Container_ihqatgrm_ON_TAP');
+                                        'ANSWERING_VIEW_Container_ihqatgrm_ON_TAP');
                                     setState(() {
                                       _model.isOptionSelected = true;
                                     });
@@ -755,7 +755,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'QUESTION_VIEW_Container_3t2dbcug_ON_TAP');
+                                        'ANSWERING_VIEW_Container_3t2dbcug_ON_TAP');
                                     setState(() {
                                       _model.isOptionSelected = true;
                                     });
@@ -821,7 +821,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'QUESTION_VIEW_Container_bcdk79u0_ON_TAP');
+                                        'ANSWERING_VIEW_Container_bcdk79u0_ON_TAP');
                                     setState(() {
                                       _model.isOptionSelected = true;
                                     });

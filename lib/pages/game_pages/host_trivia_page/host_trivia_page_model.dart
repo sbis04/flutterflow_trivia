@@ -1,19 +1,25 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/empty_widgets/empty_question_large/empty_question_large_widget.dart';
-import '/components/question_add_large/question_add_large_widget.dart';
-import '/components/question_view_large/question_view_large_widget.dart';
-import '/components/save_question_set_dialog/save_question_set_dialog_widget.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'question_add_page_widget.dart' show QuestionAddPageWidget;
-import 'package:aligned_dialog/aligned_dialog.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
+import 'host_trivia_page_widget.dart' show HostTriviaPageWidget;
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class QuestionAddPageModel extends FlutterFlowModel<QuestionAddPageWidget> {
+class HostTriviaPageModel extends FlutterFlowModel<HostTriviaPageWidget> {
+  ///  Local state fields for this page.
+
+  int timerValue = 10;
+
+  int timerBufferValue = 2;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

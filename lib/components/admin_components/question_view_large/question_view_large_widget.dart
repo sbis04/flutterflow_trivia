@@ -1,5 +1,5 @@
 import '/backend/schema/structs/index.dart';
-import '/components/question_edit_large/question_edit_large_widget.dart';
+import '/components/admin_components/question_edit_large/question_edit_large_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';

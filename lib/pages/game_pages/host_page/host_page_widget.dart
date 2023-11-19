@@ -89,6 +89,16 @@ class _HostPageWidgetState extends State<HostPageWidget> {
                   setState(() {
                     _model.isLoading = false;
                   });
+
+                  context.pushNamed(
+                    'HostTriviaPage',
+                    queryParameters: {
+                      'roomRef': serializeParam(
+                        widget.roomDetails,
+                        ParamType.DocumentReference,
+                      ),
+                    }.withoutNulls,
+                  );
                 }
               },
               backgroundColor: FlutterFlowTheme.of(context).primary,
