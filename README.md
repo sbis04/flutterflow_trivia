@@ -1,8 +1,10 @@
 # Trivia
 
-Trivia game build using [FlutterFlow](https://flutterflow.io/).
+Trivia game built using [FlutterFlow](https://flutterflow.io/).
 
 **Start playing [HERE](https://trivia.flutterflow.app)!**
+
+![Trivia Quiz Game](screenshots/trivia_cover.png)
 
 ## License
 
