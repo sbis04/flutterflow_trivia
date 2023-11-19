@@ -1,20 +1,14 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'host_answering_view_widget.dart' show HostAnsweringViewWidget;
-import 'package:cloud_firestore/cloud_firestore.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
+import 'empty_question_set_small_widget.dart' show EmptyQuestionSetSmallWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class HostAnsweringViewModel extends FlutterFlowModel<HostAnsweringViewWidget> {
-  ///  Local state fields for this component.
-
-  bool isOptionSelected = false;
-
-  int timerValue = 10;
-
+class EmptyQuestionSetSmallModel
+    extends FlutterFlowModel<EmptyQuestionSetSmallWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

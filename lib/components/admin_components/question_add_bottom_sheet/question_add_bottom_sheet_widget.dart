@@ -9,26 +9,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'question_edit_large_model.dart';
-export 'question_edit_large_model.dart';
+import 'question_add_bottom_sheet_model.dart';
+export 'question_add_bottom_sheet_model.dart';
 
-class QuestionEditLargeWidget extends StatefulWidget {
-  const QuestionEditLargeWidget({
-    Key? key,
-    required this.index,
-    required this.question,
-  }) : super(key: key);
-
-  final int? index;
-  final QuestionStruct? question;
+class QuestionAddBottomSheetWidget extends StatefulWidget {
+  const QuestionAddBottomSheetWidget({Key? key}) : super(key: key);
 
   @override
-  _QuestionEditLargeWidgetState createState() =>
-      _QuestionEditLargeWidgetState();
+  _QuestionAddBottomSheetWidgetState createState() =>
+      _QuestionAddBottomSheetWidgetState();
 }
 
-class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
-  late QuestionEditLargeModel _model;
+class _QuestionAddBottomSheetWidgetState
+    extends State<QuestionAddBottomSheetWidget> {
+  late QuestionAddBottomSheetModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -39,26 +33,21 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QuestionEditLargeModel());
+    _model = createModel(context, () => QuestionAddBottomSheetModel());
 
-    _model.textController1 ??=
-        TextEditingController(text: widget.question?.statement);
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.questionTextFieldController ??= TextEditingController();
+    _model.questionTextFieldFocusNode ??= FocusNode();
 
-    _model.option1TextFieldController ??=
-        TextEditingController(text: widget.question?.options?[0]);
+    _model.option1TextFieldController ??= TextEditingController();
     _model.option1TextFieldFocusNode ??= FocusNode();
 
-    _model.option2TextFieldController ??=
-        TextEditingController(text: widget.question?.options?[1]);
+    _model.option2TextFieldController ??= TextEditingController();
     _model.option2TextFieldFocusNode ??= FocusNode();
 
-    _model.option3TextFieldController ??=
-        TextEditingController(text: widget.question?.options?[2]);
+    _model.option3TextFieldController ??= TextEditingController();
     _model.option3TextFieldFocusNode ??= FocusNode();
 
-    _model.option4TextFieldController ??=
-        TextEditingController(text: widget.question?.options?[3]);
+    _model.option4TextFieldController ??= TextEditingController();
     _model.option4TextFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -80,67 +69,72 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
         sigmaX: 4.0,
         sigmaY: 4.0,
       ),
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
-        child: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
-            borderRadius: BorderRadius.circular(16.0),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(0.0),
+            bottomRight: Radius.circular(0.0),
+            topLeft: Radius.circular(16.0),
+            topRight: Radius.circular(16.0),
           ),
-          child: Form(
-            key: _model.formKey,
-            autovalidateMode: AutovalidateMode.disabled,
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Edit Question',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).primary,
-                              fontSize: 24.0,
-                            ),
-                      ),
-                      FlutterFlowIconButton(
-                        borderRadius: 20.0,
-                        buttonSize: 45.0,
-                        icon: Icon(
-                          Icons.close_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 26.0,
-                        ),
-                        onPressed: () async {
-                          logFirebaseEvent(
-                              'QUESTION_EDIT_LARGE_close_rounded_ICN_ON');
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                    child: Text(
-                      'You can edit your question and answers below. Mark the correct option using the checkbox before the field.',
+        ),
+        child: Form(
+          key: _model.formKey,
+          autovalidateMode: AutovalidateMode.disabled,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 30.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Add Question',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.normal,
+                            color: FlutterFlowTheme.of(context).primary,
+                            fontSize: 24.0,
                           ),
                     ),
+                    FlutterFlowIconButton(
+                      borderColor: Colors.transparent,
+                      borderRadius: 20.0,
+                      buttonSize: 45.0,
+                      icon: Icon(
+                        Icons.close_rounded,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 26.0,
+                      ),
+                      onPressed: () async {
+                        logFirebaseEvent(
+                            'QUESTION_ADD_BOTTOM_SHEET_close_rounded_');
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: Text(
+                    'You can add your question and answers below. Mark the correct option using the checkbox before the field.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.normal,
+                        ),
                   ),
-                  TextFormField(
-                    controller: _model.textController1,
-                    focusNode: _model.textFieldFocusNode,
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: TextFormField(
+                    controller: _model.questionTextFieldController,
+                    focusNode: _model.questionTextFieldFocusNode,
                     autofocus: true,
                     textCapitalization: TextCapitalization.sentences,
                     textInputAction: TextInputAction.next,
@@ -192,7 +186,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                       filled: true,
                       fillColor: FlutterFlowTheme.of(context).accent1,
                       contentPadding: EdgeInsetsDirectional.fromSTEB(
-                          24.0, 24.0, 24.0, 24.0),
+                          16.0, 16.0, 16.0, 16.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
@@ -200,11 +194,14 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                           fontWeight: FontWeight.normal,
                         ),
                     maxLines: 3,
-                    cursorColor: FlutterFlowTheme.of(context).accent4,
-                    validator:
-                        _model.textController1Validator.asValidator(context),
+                    cursorColor: FlutterFlowTheme.of(context).primary,
+                    validator: _model.questionTextFieldControllerValidator
+                        .asValidator(context),
                   ),
-                  Row(
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Theme(
@@ -221,10 +218,9 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                               FlutterFlowTheme.of(context).secondary,
                         ),
                         child: Checkbox(
-                          value: _model.checkboxValue ??=
-                              widget.question?.correctOptionIndex == 0,
+                          value: _model.checkbox1Value ??= false,
                           onChanged: (newValue) async {
-                            setState(() => _model.checkboxValue = newValue!);
+                            setState(() => _model.checkbox1Value = newValue!);
                           },
                           activeColor: FlutterFlowTheme.of(context).secondary,
                           checkColor:
@@ -287,7 +283,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                                16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -300,6 +296,14 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                               .asValidator(context),
                         ),
                       ),
+                    ].divide(SizedBox(width: 16.0)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
                       Theme(
                         data: ThemeData(
                           checkboxTheme: CheckboxThemeData(
@@ -314,8 +318,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                               FlutterFlowTheme.of(context).secondary,
                         ),
                         child: Checkbox(
-                          value: _model.checkbox2Value ??=
-                              widget.question?.correctOptionIndex == 1,
+                          value: _model.checkbox2Value ??= false,
                           onChanged: (newValue) async {
                             setState(() => _model.checkbox2Value = newValue!);
                           },
@@ -380,7 +383,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                                16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -395,7 +398,10 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                       ),
                     ].divide(SizedBox(width: 16.0)),
                   ),
-                  Row(
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Theme(
@@ -412,8 +418,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                               FlutterFlowTheme.of(context).secondary,
                         ),
                         child: Checkbox(
-                          value: _model.checkbox3Value ??=
-                              widget.question?.correctOptionIndex == 2,
+                          value: _model.checkbox3Value ??= false,
                           onChanged: (newValue) async {
                             setState(() => _model.checkbox3Value = newValue!);
                           },
@@ -478,7 +483,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                                16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -486,11 +491,19 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          cursorColor: FlutterFlowTheme.of(context).primary,
+                          cursorColor: FlutterFlowTheme.of(context).accent4,
                           validator: _model.option3TextFieldControllerValidator
                               .asValidator(context),
                         ),
                       ),
+                    ].divide(SizedBox(width: 16.0)),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
                       Theme(
                         data: ThemeData(
                           checkboxTheme: CheckboxThemeData(
@@ -505,8 +518,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                               FlutterFlowTheme.of(context).secondary,
                         ),
                         child: Checkbox(
-                          value: _model.checkbox4Value ??=
-                              widget.question?.correctOptionIndex == 3,
+                          value: _model.checkbox4Value ??= false,
                           onChanged: (newValue) async {
                             setState(() => _model.checkbox4Value = newValue!);
                           },
@@ -571,7 +583,7 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                                16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -579,109 +591,71 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                          cursorColor: FlutterFlowTheme.of(context).primary,
+                          cursorColor: FlutterFlowTheme.of(context).accent4,
                           validator: _model.option4TextFieldControllerValidator
                               .asValidator(context),
                         ),
                       ),
                     ].divide(SizedBox(width: 16.0)),
                   ),
-                  if (_model.isError)
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).error,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 8.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              child: Icon(
-                                Icons.error_rounded,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                size: 24.0,
-                              ),
+                ),
+                if (_model.isError)
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).error,
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: Icon(
+                              Icons.error_rounded,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              size: 24.0,
                             ),
-                            Expanded(
-                              child: Text(
-                                'You need to have exactly one correct option selected.',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              'You need to have exactly one correct option selected.',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
-                  Row(
+                  ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            logFirebaseEvent(
-                                'QUESTION_EDIT_LARGE_DELETE_BTN_ON_TAP');
-                            FFAppState().update(() {
-                              FFAppState()
-                                  .removeAtIndexFromQuestionSet(widget.index!);
-                            });
-                            Navigator.pop(context);
-                          },
-                          text: 'Delete',
-                          icon: Icon(
-                            Icons.delete_rounded,
-                            color: FlutterFlowTheme.of(context).error,
-                            size: 15.0,
-                          ),
-                          options: FFButtonOptions(
-                            height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).accent1,
-                            textStyle:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context).error,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 1.5,
-                            ),
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                        ),
-                      ),
                       FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
-                              'QUESTION_EDIT_LARGE_COMP_SAVE_BTN_ON_TAP');
+                              'QUESTION_ADD_BOTTOM_SHEET_SAVE_BTN_ON_TA');
                           if (_model.formKey.currentState == null ||
                               !_model.formKey.currentState!.validate()) {
                             return;
                           }
                           if (functions.isOnlyOneChecked(
-                              _model.checkboxValue!,
+                              _model.checkbox1Value!,
                               _model.checkbox2Value!,
                               _model.checkbox3Value!,
                               _model.checkbox4Value!)) {
@@ -689,23 +663,21 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                               _model.isError = false;
                             });
                             FFAppState().update(() {
-                              FFAppState().updateQuestionSetAtIndex(
-                                widget.index!,
-                                (_) => QuestionStruct(
-                                  statement: _model.textController1.text,
-                                  options: functions.createOptionsList(
-                                      _model.option1TextFieldController.text,
-                                      _model.option2TextFieldController.text,
-                                      _model.option3TextFieldController.text,
-                                      _model.option4TextFieldController.text),
-                                  correctOptionIndex:
-                                      functions.correctChoiceIndex(
-                                          _model.checkboxValue!,
-                                          _model.checkbox2Value!,
-                                          _model.checkbox3Value!,
-                                          _model.checkbox4Value!),
-                                ),
-                              );
+                              FFAppState().addToQuestionSet(QuestionStruct(
+                                statement:
+                                    _model.questionTextFieldController.text,
+                                options: functions.createOptionsList(
+                                    _model.option1TextFieldController.text,
+                                    _model.option2TextFieldController.text,
+                                    _model.option3TextFieldController.text,
+                                    _model.option4TextFieldController.text),
+                                correctOptionIndex:
+                                    functions.correctChoiceIndex(
+                                        _model.checkbox1Value!,
+                                        _model.checkbox2Value!,
+                                        _model.checkbox3Value!,
+                                        _model.checkbox4Value!),
+                              ));
                             });
                             Navigator.pop(context);
                           } else {
@@ -743,8 +715,8 @@ class _QuestionEditLargeWidgetState extends State<QuestionEditLargeWidget> {
                       ),
                     ],
                   ),
-                ].divide(SizedBox(height: 16.0)),
-              ),
+                ),
+              ],
             ),
           ),
         ),
