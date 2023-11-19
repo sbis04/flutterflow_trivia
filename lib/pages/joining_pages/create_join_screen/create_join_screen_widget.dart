@@ -106,7 +106,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                 logFirebaseEvent(
                                     'CREATE_JOIN_SCREEN_github_ICN_ON_TAP');
                                 await launchURL(
-                                    'https://github.com/sbis04/codewords_FF');
+                                    'https://github.com/sbis04/flutterflow_trivia');
                               },
                             ),
                           ],
@@ -458,7 +458,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                   logFirebaseEvent(
                                       'CREATE_JOIN_SCREEN_GitHubButton_ON_TAP');
                                   await launchURL(
-                                      'https://github.com/sbis04/codewords_FF');
+                                      'https://github.com/sbis04/flutterflow_trivia');
                                 },
                               ),
                             ],
