@@ -153,6 +153,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 questionSetRef: params.getParam('questionSetRef',
                     ParamType.DocumentReference, false, ['question_sets']),
               ),
+            ),
+            FFRoute(
+              name: 'HostTriviaPage',
+              path: 'hostTriviaPage',
+              requireAuth: true,
+              builder: (context, params) => HostTriviaPageWidget(
+                roomRef: params.getParam(
+                    'roomRef', ParamType.DocumentReference, false, ['room']),
+              ),
+            ),
+            FFRoute(
+              name: 'WinnersPage',
+              path: 'winnersPage',
+              requireAuth: true,
+              builder: (context, params) => WinnersPageWidget(
+                roomRef: params.getParam(
+                    'roomRef', ParamType.DocumentReference, false, ['room']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
