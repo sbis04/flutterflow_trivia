@@ -3,18 +3,15 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'answering_view_model.dart';
 export 'answering_view_model.dart';
 
 class AnsweringViewWidget extends StatefulWidget {
   const AnsweringViewWidget({
-    Key? key,
+    super.key,
     this.roomCode,
     this.currentQuestionIndex,
     this.playerRef,
@@ -24,7 +21,7 @@ class AnsweringViewWidget extends StatefulWidget {
     this.option2,
     this.option3,
     this.option4,
-  }) : super(key: key);
+  });
 
   final int? roomCode;
   final int? currentQuestionIndex;
@@ -100,7 +97,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,7 +117,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
                             widget.roomCode?.toString(),
@@ -139,7 +136,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -208,11 +205,11 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             widget.question!,
                             style: FlutterFlowTheme.of(context)
@@ -222,7 +219,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   fontSize: 18.0,
                                 ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -264,9 +261,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   width: 2.0,
                                 ),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 8.0, 12.0, 8.0),
                                 child: AutoSizeText(
                                   widget.option1!,
@@ -323,9 +320,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   width: 2.0,
                                 ),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 8.0, 12.0, 8.0),
                                 child: AutoSizeText(
                                   widget.option2!,
@@ -382,9 +379,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   width: 2.0,
                                 ),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 8.0, 12.0, 8.0),
                                 child: AutoSizeText(
                                   widget.option3!,
@@ -441,9 +438,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   width: 2.0,
                                 ),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 8.0, 12.0, 8.0),
                                 child: AutoSizeText(
                                   widget.option4!,
@@ -460,8 +457,8 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                             ),
                           ),
                         ]
-                            .divide(SizedBox(height: 8.0))
-                            .addToEnd(SizedBox(height: 16.0)),
+                            .divide(const SizedBox(height: 8.0))
+                            .addToEnd(const SizedBox(height: 16.0)),
                       ),
                     ),
                   ),
@@ -481,14 +478,14 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 32.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 32.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -505,7 +502,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -542,7 +539,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -590,11 +587,11 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           Expanded(
                             child: Text(
                               widget.question!,
@@ -606,7 +603,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   ),
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -657,9 +654,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                         width: 2.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 8.0, 12.0, 8.0),
                                       child: AutoSizeText(
                                         widget.option1!,
@@ -723,9 +720,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                         width: 2.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 8.0, 12.0, 8.0),
                                       child: AutoSizeText(
                                         widget.option2!,
@@ -742,7 +739,7 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 16.0)),
+                            ].divide(const SizedBox(width: 16.0)),
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -794,9 +791,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                         width: 2.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 8.0, 12.0, 8.0),
                                       child: AutoSizeText(
                                         widget.option3!,
@@ -860,9 +857,9 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                         width: 2.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 8.0, 12.0, 8.0),
                                       child: AutoSizeText(
                                         widget.option4!,
@@ -879,11 +876,11 @@ class _AnsweringViewWidgetState extends State<AnsweringViewWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 16.0)),
+                            ].divide(const SizedBox(width: 16.0)),
                           ),
                         ]
-                            .divide(SizedBox(height: 16.0))
-                            .addToEnd(SizedBox(height: 16.0)),
+                            .divide(const SizedBox(height: 16.0))
+                            .addToEnd(const SizedBox(height: 16.0)),
                       ),
                     ),
                   ),

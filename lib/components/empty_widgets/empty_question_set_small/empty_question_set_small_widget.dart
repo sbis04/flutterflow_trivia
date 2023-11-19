@@ -2,14 +2,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_question_set_small_model.dart';
 export 'empty_question_set_small_model.dart';
 
 class EmptyQuestionSetSmallWidget extends StatefulWidget {
-  const EmptyQuestionSetSmallWidget({Key? key}) : super(key: key);
+  const EmptyQuestionSetSmallWidget({super.key});
 
   @override
   _EmptyQuestionSetSmallWidgetState createState() =>
@@ -46,7 +44,7 @@ class _EmptyQuestionSetSmallWidgetState
     context.watch<FFAppState>();
 
     return Stack(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       children: [
         ListView(
           padding: EdgeInsets.zero,
@@ -63,7 +61,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +78,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -111,7 +109,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +126,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -159,7 +157,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,7 +174,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -207,7 +205,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,7 +222,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -255,7 +253,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -272,7 +270,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -303,7 +301,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -320,7 +318,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -351,7 +349,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -368,7 +366,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -399,7 +397,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -416,7 +414,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -447,7 +445,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -464,7 +462,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -495,7 +493,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -512,7 +510,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -543,7 +541,7 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -560,7 +558,7 @@ class _EmptyQuestionSetSmallWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 4.0, 0.0),
                           child: Text(
                             ' ',
@@ -580,9 +578,9 @@ class _EmptyQuestionSetSmallWidgetState
                 ),
               ),
             ),
-          ].divide(SizedBox(height: 12.0)),
+          ].divide(const SizedBox(height: 12.0)),
         ),
-        Container(
+        const SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: custom_widgets.RadialGradientContainer(
@@ -596,30 +594,30 @@ class _EmptyQuestionSetSmallWidgetState
           ),
         ),
         Align(
-          alignment: AlignmentDirectional(0.00, 1.00),
+          alignment: const AlignmentDirectional(0.00, 1.00),
           child: Container(
             width: double.infinity,
             height: 100.0,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0x00FFFFFF),
+                  const Color(0x00FFFFFF),
                   FlutterFlowTheme.of(context).primaryBackground
                 ],
-                stops: [0.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                stops: const [0.0, 1.0],
+                begin: const AlignmentDirectional(0.0, -1.0),
+                end: const AlignmentDirectional(0, 1.0),
               ),
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: Icon(
                   Icons.notes_rounded,
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -634,9 +632,9 @@ class _EmptyQuestionSetSmallWidgetState
                     ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Text(
-                  'You can add a question set by clicking the \"Add\" button below.',
+                  'You can add a question set by clicking the "Add" button below.',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryText,

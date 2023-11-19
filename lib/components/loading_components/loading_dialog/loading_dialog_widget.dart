@@ -2,14 +2,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'loading_dialog_model.dart';
 export 'loading_dialog_model.dart';
 
 class LoadingDialogWidget extends StatefulWidget {
-  const LoadingDialogWidget({Key? key}) : super(key: key);
+  const LoadingDialogWidget({super.key});
 
   @override
   _LoadingDialogWidgetState createState() => _LoadingDialogWidgetState();
@@ -44,7 +42,7 @@ class _LoadingDialogWidgetState extends State<LoadingDialogWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 4.0,
@@ -54,7 +52,7 @@ class _LoadingDialogWidgetState extends State<LoadingDialogWidget> {
         child: Container(
           width: 600.0,
           height: 160.0,
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
@@ -65,7 +63,7 @@ class _LoadingDialogWidgetState extends State<LoadingDialogWidget> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                 width: 50.0,
                 height: 50.0,
                 child: custom_widgets.CircularIndicator(

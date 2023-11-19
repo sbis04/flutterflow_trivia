@@ -5,20 +5,18 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'host_trivia_page_model.dart';
 export 'host_trivia_page_model.dart';
 
 class HostTriviaPageWidget extends StatefulWidget {
   const HostTriviaPageWidget({
-    Key? key,
+    super.key,
     required this.roomRef,
-  }) : super(key: key);
+  });
 
   final DocumentReference? roomRef;
 
@@ -149,7 +147,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -172,7 +170,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -195,7 +193,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -280,7 +278,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -295,13 +293,13 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                       0)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
-                                                      child: Container(
+                                                      child: SizedBox(
                                                         width: 36.0,
                                                         height: 36.0,
                                                         child: custom_widgets
@@ -350,14 +348,14 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -378,7 +376,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -454,14 +452,14 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -482,7 +480,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -506,7 +504,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                   ),
                                                 ],
                                               ),
-                                            Spacer(),
+                                            const Spacer(),
                                             Text(
                                               stackQuestionSetsRecord
                                                   .questions[
@@ -521,7 +519,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                         fontSize: 18.0,
                                                       ),
                                             ),
-                                            Spacer(),
+                                            const Spacer(),
                                             Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -540,10 +538,10 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                   width: 2.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.00, 0.00),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 8.0, 12.0, 8.0),
                                                 child: AutoSizeText(
@@ -583,10 +581,10 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                   width: 2.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.00, 0.00),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 8.0, 12.0, 8.0),
                                                 child: AutoSizeText(
@@ -626,10 +624,10 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                   width: 2.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.00, 0.00),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 8.0, 12.0, 8.0),
                                                 child: AutoSizeText(
@@ -669,10 +667,10 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                   width: 2.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.00, 0.00),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 8.0, 12.0, 8.0),
                                                 child: AutoSizeText(
@@ -695,8 +693,8 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                               ),
                                             ),
                                           ]
-                                              .divide(SizedBox(height: 8.0))
-                                              .addToEnd(SizedBox(height: 16.0)),
+                                              .divide(const SizedBox(height: 8.0))
+                                              .addToEnd(const SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ),
@@ -717,7 +715,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     32.0, 32.0, 32.0, 32.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -742,7 +740,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -787,7 +785,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -846,7 +844,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 16.0, 0.0),
                                             child: StreamBuilder<
                                                 List<PlayersRecord>>(
@@ -883,14 +881,14 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                 return Container(
                                                   width: 300.0,
                                                   height: double.infinity,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -915,12 +913,10 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                         24.0,
                                                                   ),
                                                             ),
-                                                            if (containerPlayersRecordList
-                                                                    .length >
-                                                                0)
+                                                            if (containerPlayersRecordList.isNotEmpty)
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -939,7 +935,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -987,7 +983,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                       .length,
                                                               separatorBuilder: (_,
                                                                       __) =>
-                                                                  SizedBox(
+                                                                  const SizedBox(
                                                                       height:
                                                                           16.0),
                                                               itemBuilder: (context,
@@ -1058,7 +1054,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Column(
@@ -1067,7 +1063,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                   if (_model.timerValue == 0)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -1085,13 +1081,13 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                               0)
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 50.0,
                                                                 height: 50.0,
                                                                 child: custom_widgets
@@ -1138,14 +1134,14 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         50.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1167,7 +1163,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                     elevation:
                                                                         3.0,
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -1225,14 +1221,14 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         50.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1254,7 +1250,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                                     elevation:
                                                                         3.0,
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -1279,7 +1275,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                         ],
                                                       ),
                                                     ),
-                                                  Spacer(),
+                                                  const Spacer(),
                                                   Expanded(
                                                     child: Text(
                                                       stackQuestionSetsRecord
@@ -1298,7 +1294,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                               ),
                                                     ),
                                                   ),
-                                                  Spacer(),
+                                                  const Spacer(),
                                                   Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1329,11 +1325,11 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                             ),
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         8.0,
@@ -1390,11 +1386,11 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                             ),
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         8.0,
@@ -1426,7 +1422,7 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 16.0)),
+                                                        const SizedBox(width: 16.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -1458,11 +1454,11 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                             ),
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         8.0,
@@ -1519,11 +1515,11 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                             ),
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         8.0,
@@ -1555,13 +1551,13 @@ class _HostTriviaPageWidgetState extends State<HostTriviaPageWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 16.0)),
+                                                        const SizedBox(width: 16.0)),
                                                   ),
                                                 ]
                                                     .divide(
-                                                        SizedBox(height: 16.0))
+                                                        const SizedBox(height: 16.0))
                                                     .addToEnd(
-                                                        SizedBox(height: 16.0)),
+                                                        const SizedBox(height: 16.0)),
                                               ),
                                             ),
                                           ),

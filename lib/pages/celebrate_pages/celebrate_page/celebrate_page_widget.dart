@@ -5,13 +5,12 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'celebrate_page_model.dart';
 export 'celebrate_page_model.dart';
 
 class CelebratePageWidget extends StatefulWidget {
-  const CelebratePageWidget({Key? key}) : super(key: key);
+  const CelebratePageWidget({super.key});
 
   @override
   _CelebratePageWidgetState createState() => _CelebratePageWidgetState();
@@ -80,7 +79,7 @@ class _CelebratePageWidgetState extends State<CelebratePageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            FaIcon(
+                            const FaIcon(
                               FontAwesomeIcons.trophy,
                               color: Color(0xFFFFB938),
                               size: 90.0,
@@ -109,7 +108,7 @@ class _CelebratePageWidgetState extends State<CelebratePageWidget> {
                                   ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 50.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -122,7 +121,7 @@ class _CelebratePageWidgetState extends State<CelebratePageWidget> {
                                   context.pushNamed(
                                     'CreateJoinScreen',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -133,11 +132,11 @@ class _CelebratePageWidgetState extends State<CelebratePageWidget> {
                                 options: FFButtonOptions(
                                   width: 200.0,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x004B39EF),
+                                  color: const Color(0x004B39EF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -159,7 +158,7 @@ class _CelebratePageWidgetState extends State<CelebratePageWidget> {
                         ),
                       ],
                     ),
-                    Container(
+                    const SizedBox(
                       width: double.infinity,
                       height: double.infinity,
                       child: custom_widgets.ConfettiOverlay(

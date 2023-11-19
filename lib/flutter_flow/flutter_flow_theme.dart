@@ -127,12 +127,12 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFD50000);
   late Color info = const Color(0xFF2979FF);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFFE0E3E7);
-  late Color accent50 = Color(0x7FFF3A3A);
-  late Color barrierColor = Color(0xA6FFFFFF);
-  late Color iconButtonBg = Color(0x3FFFFFFF);
-  late Color emptyBg = Color(0x41666666);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFFE0E3E7);
+  late Color accent50 = const Color(0x7FFF3A3A);
+  late Color barrierColor = const Color(0xA6FFFFFF);
+  late Color iconButtonBg = const Color(0x3FFFFFFF);
+  late Color emptyBg = const Color(0x41666666);
 }
 
 abstract class Typography {

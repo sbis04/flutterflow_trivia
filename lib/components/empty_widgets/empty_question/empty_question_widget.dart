@@ -3,14 +3,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_question_model.dart';
 export 'empty_question_model.dart';
 
 class EmptyQuestionWidget extends StatefulWidget {
-  const EmptyQuestionWidget({Key? key}) : super(key: key);
+  const EmptyQuestionWidget({super.key});
 
   @override
   _EmptyQuestionWidgetState createState() => _EmptyQuestionWidgetState();
@@ -45,7 +43,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
     context.watch<FFAppState>();
 
     return Stack(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       children: [
         if (responsiveVisibility(
           context: context,
@@ -57,7 +55,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
             scrollDirection: Axis.vertical,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +65,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Question',
@@ -92,7 +90,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               ' ',
@@ -112,7 +110,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -144,7 +142,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -155,7 +153,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 1',
@@ -181,7 +179,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -198,13 +196,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -236,7 +234,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -247,7 +245,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 2',
@@ -273,7 +271,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -290,13 +288,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -328,7 +326,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -339,7 +337,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 3',
@@ -365,7 +363,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -382,13 +380,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -420,7 +418,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -431,7 +429,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 4',
@@ -457,7 +455,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -474,17 +472,17 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -499,9 +497,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               ),
                               options: FFButtonOptions(
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).accent3,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -527,15 +525,15 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               print('Button pressed ...');
                             },
                             text: 'Edit',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.mode_edit_rounded,
                               size: 15.0,
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondaryText,
                               textStyle: FlutterFlowTheme.of(context)
@@ -546,7 +544,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                     fontWeight: FontWeight.w600,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -556,11 +554,11 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(height: 8.0)),
+                  ].divide(const SizedBox(height: 8.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -570,7 +568,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Question',
@@ -595,7 +593,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               ' ',
@@ -615,7 +613,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -647,7 +645,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -658,7 +656,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 1',
@@ -684,7 +682,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -701,13 +699,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -739,7 +737,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -750,7 +748,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 2',
@@ -776,7 +774,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -793,13 +791,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -831,7 +829,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -842,7 +840,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 3',
@@ -868,7 +866,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -885,13 +883,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -923,7 +921,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -934,7 +932,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 4',
@@ -960,7 +958,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -977,17 +975,17 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -1002,9 +1000,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               ),
                               options: FFButtonOptions(
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).accent3,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1030,15 +1028,15 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               print('Button pressed ...');
                             },
                             text: 'Edit',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.mode_edit_rounded,
                               size: 15.0,
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondaryText,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1049,7 +1047,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                     fontWeight: FontWeight.w600,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -1059,11 +1057,11 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(height: 8.0)),
+                  ].divide(const SizedBox(height: 8.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1073,7 +1071,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Question',
@@ -1098,7 +1096,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               ' ',
@@ -1118,7 +1116,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1150,7 +1148,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1161,7 +1159,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 1',
@@ -1187,7 +1185,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1204,13 +1202,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1242,7 +1240,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1253,7 +1251,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 2',
@@ -1279,7 +1277,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1296,13 +1294,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1334,7 +1332,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1345,7 +1343,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 3',
@@ -1371,7 +1369,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1388,13 +1386,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1426,7 +1424,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1437,7 +1435,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 4',
@@ -1463,7 +1461,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1480,17 +1478,17 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -1505,9 +1503,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               ),
                               options: FFButtonOptions(
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).accent3,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1533,15 +1531,15 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               print('Button pressed ...');
                             },
                             text: 'Edit',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.mode_edit_rounded,
                               size: 15.0,
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondaryText,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1552,7 +1550,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                     fontWeight: FontWeight.w600,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -1562,10 +1560,10 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(height: 8.0)),
+                  ].divide(const SizedBox(height: 8.0)),
                 ),
               ),
-            ].divide(SizedBox(height: 16.0)),
+            ].divide(const SizedBox(height: 16.0)),
           ),
         if (responsiveVisibility(
           context: context,
@@ -1577,7 +1575,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
             scrollDirection: Axis.vertical,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1587,7 +1585,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Question',
@@ -1612,7 +1610,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               ' ',
@@ -1632,7 +1630,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1664,7 +1662,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1675,7 +1673,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 1',
@@ -1701,7 +1699,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1719,7 +1717,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1751,7 +1749,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1762,7 +1760,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 2',
@@ -1788,7 +1786,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1805,13 +1803,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1843,7 +1841,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1854,7 +1852,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 3',
@@ -1880,7 +1878,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1898,7 +1896,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -1930,7 +1928,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -1941,7 +1939,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 4',
@@ -1967,7 +1965,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -1984,14 +1982,14 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -2005,9 +2003,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).accent3,
                               textStyle: FlutterFlowTheme.of(context)
@@ -2033,15 +2031,15 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             print('Button pressed ...');
                           },
                           text: 'Edit',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.mode_edit_rounded,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondaryText,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2052,7 +2050,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   fontWeight: FontWeight.w600,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -2061,11 +2059,11 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                         ),
                       ],
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(const SizedBox(height: 16.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -2075,7 +2073,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Question',
@@ -2100,7 +2098,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               ' ',
@@ -2120,7 +2118,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2152,7 +2150,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2163,7 +2161,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 1',
@@ -2189,7 +2187,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2207,7 +2205,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2239,7 +2237,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2250,7 +2248,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 2',
@@ -2276,7 +2274,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2293,13 +2291,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2331,7 +2329,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2342,7 +2340,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 3',
@@ -2368,7 +2366,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2386,7 +2384,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2418,7 +2416,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2429,7 +2427,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 4',
@@ -2455,7 +2453,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2472,14 +2470,14 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -2493,9 +2491,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).accent3,
                               textStyle: FlutterFlowTheme.of(context)
@@ -2521,15 +2519,15 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             print('Button pressed ...');
                           },
                           text: 'Edit',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.mode_edit_rounded,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondaryText,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2540,7 +2538,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   fontWeight: FontWeight.w600,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -2549,11 +2547,11 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                         ),
                       ],
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(const SizedBox(height: 16.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -2563,7 +2561,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Question',
@@ -2588,7 +2586,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               ' ',
@@ -2608,7 +2606,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2640,7 +2638,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2651,7 +2649,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 1',
@@ -2677,7 +2675,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2695,7 +2693,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2727,7 +2725,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2738,7 +2736,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 2',
@@ -2764,7 +2762,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2781,13 +2779,13 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2819,7 +2817,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2830,7 +2828,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 3',
@@ -2856,7 +2854,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2874,7 +2872,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Stack(
                             children: [
@@ -2906,7 +2904,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                               Container(
                                 width: 36.0,
                                 height: 36.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                               ),
                             ],
                           ),
@@ -2917,7 +2915,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   'Option 4',
@@ -2943,7 +2941,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 16.0, 24.0, 16.0),
                                   child: Text(
                                     ' ',
@@ -2960,14 +2958,14 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -2981,9 +2979,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).accent3,
                               textStyle: FlutterFlowTheme.of(context)
@@ -3009,15 +3007,15 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                             print('Button pressed ...');
                           },
                           text: 'Edit',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.mode_edit_rounded,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondaryText,
                             textStyle: FlutterFlowTheme.of(context)
@@ -3028,7 +3026,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                                   fontWeight: FontWeight.w600,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -3037,12 +3035,12 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                         ),
                       ],
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(const SizedBox(height: 16.0)),
                 ),
               ),
-            ].divide(SizedBox(height: 16.0)),
+            ].divide(const SizedBox(height: 16.0)),
           ),
-        Container(
+        const SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: custom_widgets.RadialGradientContainer(
@@ -3056,19 +3054,19 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
           ),
         ),
         Align(
-          alignment: AlignmentDirectional(0.00, 1.00),
+          alignment: const AlignmentDirectional(0.00, 1.00),
           child: Container(
             width: double.infinity,
             height: 100.0,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0x00FFFFFF),
+                  const Color(0x00FFFFFF),
                   FlutterFlowTheme.of(context).primaryBackground
                 ],
-                stops: [0.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                stops: const [0.0, 1.0],
+                begin: const AlignmentDirectional(0.0, -1.0),
+                end: const AlignmentDirectional(0, 1.0),
               ),
             ),
           ),
@@ -3077,7 +3075,7 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
               child: Icon(
                 Icons.notes_rounded,
                 color: FlutterFlowTheme.of(context).primaryText,
@@ -3092,9 +3090,9 @@ class _EmptyQuestionWidgetState extends State<EmptyQuestionWidget> {
                   ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Text(
-                'You can add a question by clicking the \"Add\" button below.',
+                'You can add a question by clicking the "Add" button below.',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.of(context).secondaryText,

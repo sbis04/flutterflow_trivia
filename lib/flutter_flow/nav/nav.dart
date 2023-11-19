@@ -1,21 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -80,15 +72,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? CreateJoinScreenWidget()
-          : StartScreenWidget(),
+          ? const CreateJoinScreenWidget()
+          : const StartScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? CreateJoinScreenWidget()
-              : StartScreenWidget(),
+              ? const CreateJoinScreenWidget()
+              : const StartScreenWidget(),
           routes: [
             FFRoute(
               name: 'StartScreen',
@@ -117,13 +109,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'CelebratePage',
               path: 'celebratePage',
-              builder: (context, params) => CelebratePageWidget(),
+              builder: (context, params) => const CelebratePageWidget(),
             ),
             FFRoute(
               name: 'CreateJoinScreen',
               path: 'createJoinScreen',
               requireAuth: true,
-              builder: (context, params) => CreateJoinScreenWidget(),
+              builder: (context, params) => const CreateJoinScreenWidget(),
             ),
             FFRoute(
               name: 'RoomJoinScreen',
@@ -137,13 +129,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'QuestionSetPage',
               path: 'questionSetPage',
               requireAuth: true,
-              builder: (context, params) => QuestionSetPageWidget(),
+              builder: (context, params) => const QuestionSetPageWidget(),
             ),
             FFRoute(
               name: 'QuestionAddPage',
               path: 'questionAddPage',
               requireAuth: true,
-              builder: (context, params) => QuestionAddPageWidget(),
+              builder: (context, params) => const QuestionAddPageWidget(),
             ),
             FFRoute(
               name: 'QuestionEditPage',
@@ -398,7 +390,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(
+  static TransitionInfo appDefault() => const TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.fade,
         duration: Duration(milliseconds: 300),

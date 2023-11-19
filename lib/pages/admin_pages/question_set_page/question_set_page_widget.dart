@@ -1,20 +1,17 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/components/empty_widgets/empty_question_set_large/empty_question_set_large_widget.dart';
 import '/components/empty_widgets/empty_question_set_small/empty_question_set_small_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'question_set_page_model.dart';
 export 'question_set_page_model.dart';
 
 class QuestionSetPageWidget extends StatefulWidget {
-  const QuestionSetPageWidget({Key? key}) : super(key: key);
+  const QuestionSetPageWidget({super.key});
 
   @override
   _QuestionSetPageWidgetState createState() => _QuestionSetPageWidgetState();
@@ -100,13 +97,13 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                   ))
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -165,7 +162,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 0.0, 16.0),
                             child: Text(
                               'Question Sets',
@@ -180,7 +177,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: StreamBuilder<List<QuestionSetsRecord>>(
                                 stream: queryQuestionSetsRecord(
@@ -214,7 +211,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                       listViewQuestionSetsRecordList =
                                       snapshot.data!;
                                   if (listViewQuestionSetsRecordList.isEmpty) {
-                                    return Container(
+                                    return const SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: EmptyQuestionSetSmallWidget(),
@@ -226,7 +223,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                     itemCount:
                                         listViewQuestionSetsRecordList.length,
                                     separatorBuilder: (_, __) =>
-                                        SizedBox(height: 12.0),
+                                        const SizedBox(height: 12.0),
                                     itemBuilder: (context, listViewIndex) {
                                       final listViewQuestionSetsRecord =
                                           listViewQuestionSetsRecordList[
@@ -277,7 +274,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -306,7 +303,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -337,7 +334,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -388,9 +385,9 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.00, 0.00),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 32.0, 32.0, 32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -402,7 +399,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -425,7 +422,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -463,7 +460,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 16.0),
                                     child: Text(
                                       'Question Sets',
@@ -514,12 +511,12 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                             snapshot.data!;
                                         if (gridViewQuestionSetsRecordList
                                             .isEmpty) {
-                                          return EmptyQuestionSetLargeWidget();
+                                          return const EmptyQuestionSetLargeWidget();
                                         }
                                         return GridView.builder(
                                           padding: EdgeInsets.zero,
                                           gridDelegate:
-                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                              const SliverGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 2,
                                             crossAxisSpacing: 12.0,
                                             mainAxisSpacing: 12.0,
@@ -585,7 +582,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 16.0,
                                                           16.0, 16.0),
                                                   child: Column(
@@ -624,7 +621,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -654,7 +651,7 @@ class _QuestionSetPageWidgetState extends State<QuestionSetPageWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,

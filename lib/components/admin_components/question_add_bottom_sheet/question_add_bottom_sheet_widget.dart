@@ -6,14 +6,12 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'question_add_bottom_sheet_model.dart';
 export 'question_add_bottom_sheet_model.dart';
 
 class QuestionAddBottomSheetWidget extends StatefulWidget {
-  const QuestionAddBottomSheetWidget({Key? key}) : super(key: key);
+  const QuestionAddBottomSheetWidget({super.key});
 
   @override
   _QuestionAddBottomSheetWidgetState createState() =>
@@ -73,7 +71,7 @@ class _QuestionAddBottomSheetWidgetState
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -84,7 +82,7 @@ class _QuestionAddBottomSheetWidgetState
           key: _model.formKey,
           autovalidateMode: AutovalidateMode.disabled,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 30.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 30.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +117,7 @@ class _QuestionAddBottomSheetWidgetState
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: Text(
                     'You can add your question and answers below. Mark the correct option using the checkbox before the field.',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -131,7 +129,7 @@ class _QuestionAddBottomSheetWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: TextFormField(
                     controller: _model.questionTextFieldController,
                     focusNode: _model.questionTextFieldFocusNode,
@@ -185,7 +183,7 @@ class _QuestionAddBottomSheetWidgetState
                       ),
                       filled: true,
                       fillColor: FlutterFlowTheme.of(context).accent1,
-                      contentPadding: EdgeInsetsDirectional.fromSTEB(
+                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -200,7 +198,7 @@ class _QuestionAddBottomSheetWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -282,7 +280,7 @@ class _QuestionAddBottomSheetWidgetState
                             ),
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
@@ -296,11 +294,11 @@ class _QuestionAddBottomSheetWidgetState
                               .asValidator(context),
                         ),
                       ),
-                    ].divide(SizedBox(width: 16.0)),
+                    ].divide(const SizedBox(width: 16.0)),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -382,7 +380,7 @@ class _QuestionAddBottomSheetWidgetState
                             ),
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
@@ -396,11 +394,11 @@ class _QuestionAddBottomSheetWidgetState
                               .asValidator(context),
                         ),
                       ),
-                    ].divide(SizedBox(width: 16.0)),
+                    ].divide(const SizedBox(width: 16.0)),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -482,7 +480,7 @@ class _QuestionAddBottomSheetWidgetState
                             ),
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
@@ -496,11 +494,11 @@ class _QuestionAddBottomSheetWidgetState
                               .asValidator(context),
                         ),
                       ),
-                    ].divide(SizedBox(width: 16.0)),
+                    ].divide(const SizedBox(width: 16.0)),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -582,7 +580,7 @@ class _QuestionAddBottomSheetWidgetState
                             ),
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent2,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                           ),
                           style:
@@ -596,7 +594,7 @@ class _QuestionAddBottomSheetWidgetState
                               .asValidator(context),
                         ),
                       ),
-                    ].divide(SizedBox(width: 16.0)),
+                    ].divide(const SizedBox(width: 16.0)),
                   ),
                 ),
                 if (_model.isError)
@@ -608,12 +606,12 @@ class _QuestionAddBottomSheetWidgetState
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
                               Icons.error_rounded,
@@ -641,7 +639,7 @@ class _QuestionAddBottomSheetWidgetState
                     ),
                   ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -687,15 +685,15 @@ class _QuestionAddBottomSheetWidgetState
                           }
                         },
                         text: 'Save',
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.save_rounded,
                           size: 15.0,
                         ),
                         options: FFButtonOptions(
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -706,7 +704,7 @@ class _QuestionAddBottomSheetWidgetState
                                     fontWeight: FontWeight.w600,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

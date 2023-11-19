@@ -7,17 +7,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_join_screen_model.dart';
 export 'create_join_screen_model.dart';
 
 class CreateJoinScreenWidget extends StatefulWidget {
-  const CreateJoinScreenWidget({Key? key}) : super(key: key);
+  const CreateJoinScreenWidget({super.key});
 
   @override
   _CreateJoinScreenWidgetState createState() => _CreateJoinScreenWidgetState();
@@ -90,7 +88,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                     actions: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -140,14 +138,14 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                           FlutterFlowTheme.of(context).primary,
                           FlutterFlowTheme.of(context).secondary
                         ],
-                        stops: [0.0, 0.8, 1.0],
-                        begin: AlignmentDirectional(0.0, -1.0),
-                        end: AlignmentDirectional(0, 1.0),
+                        stops: const [0.0, 0.8, 1.0],
+                        begin: const AlignmentDirectional(0.0, -1.0),
+                        end: const AlignmentDirectional(0, 1.0),
                       ),
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -181,7 +179,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -208,7 +206,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Poppins',
-                                          color: Color(0xB3000000),
+                                          color: const Color(0xB3000000),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -218,7 +216,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -258,9 +256,9 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 55.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -272,7 +270,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                       fontWeight: FontWeight.normal,
                                     ),
                                 elevation: 2.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -282,7 +280,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -294,7 +292,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
                                   backgroundColor: Colors.transparent,
-                                  barrierColor: Color(0x00000000),
+                                  barrierColor: const Color(0x00000000),
                                   context: context,
                                   builder: (context) {
                                     return GestureDetector(
@@ -306,7 +304,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                       child: Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: JoinGameWidget(),
+                                        child: const JoinGameWidget(),
                                       ),
                                     );
                                   },
@@ -316,9 +314,9 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 55.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: Colors.white,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -351,7 +349,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                     color: FlutterFlowTheme.of(context).accent1,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () {
@@ -361,10 +359,10 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                       options: FFButtonOptions(
                                         width: double.infinity,
                                         height: 60.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .accent3,
@@ -393,14 +391,14 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                 ],
                               ),
                             ),
-                          Spacer(),
+                          const Spacer(),
                           Image.asset(
                             'assets/images/trivia_logo_white_high_res.png',
                             width: double.infinity,
                             height: 250.0,
                             fit: BoxFit.contain,
                           ),
-                          Spacer(flex: 3),
+                          const Spacer(flex: 3),
                         ],
                       ),
                     ),
@@ -424,7 +422,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -467,13 +465,13 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 60.0),
                                       child: Image.asset(
                                         'assets/images/trivia_logo_high_res.png',
@@ -485,19 +483,19 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                     ),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Container(
                                   width: MediaQuery.sizeOf(context).width * 0.3,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0x00FFFFFF),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 24.0, 24.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        Spacer(),
+                                        const Spacer(),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -534,7 +532,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -571,7 +569,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color:
-                                                            Color(0xB3000000),
+                                                            const Color(0xB3000000),
                                                         fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -586,7 +584,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 24.0),
                                                 child: FFButtonWidget(
@@ -641,11 +639,11 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                     width: double.infinity,
                                                     height: 60.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -662,7 +660,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                     elevation: 2.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -674,7 +672,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
                                                 child: FFButtonWidget(
@@ -694,11 +692,11 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                     width: double.infinity,
                                                     height: 60.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: Colors.white,
@@ -746,7 +744,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     16.0,
@@ -768,14 +766,14 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                 double.infinity,
                                                             height: 60.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -825,9 +823,9 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                         if (FFAppState().isJoinning)
                                           Container(
                                             width: double.infinity,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 30.0),
                                               child: Column(
@@ -837,7 +835,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 5.0),
                                                     child: InkWell(
@@ -860,10 +858,10 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                       },
                                                       child: Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       5.0,
@@ -884,7 +882,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -913,7 +911,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: Row(
@@ -960,7 +958,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Poppins',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0x7F000000),
                                                                         fontSize:
                                                                             20.0,
@@ -1075,7 +1073,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1104,14 +1102,14 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                               width: 100.0,
                                                               height: 45.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1135,7 +1133,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                       ),
                                                               elevation: 2.0,
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -1232,7 +1230,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1291,7 +1289,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                   'roomCode':
                                                                       serializeParam(
                                                                     joinButtonRoomRecord
-                                                                        ?.code,
+                                                                        .code,
                                                                     ParamType
                                                                         .int,
                                                                   ),
@@ -1299,7 +1297,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1329,14 +1327,14 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                 double.infinity,
                                                             height: 60.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1362,7 +1360,7 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -1379,12 +1377,12 @@ class _CreateJoinScreenWidgetState extends State<CreateJoinScreenWidget> {
                                               ),
                                             ),
                                           ),
-                                        Spacer(flex: 2),
+                                        const Spacer(flex: 2),
                                       ],
                                     ),
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                               ],
                             ),
                           ),

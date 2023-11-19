@@ -4,21 +4,19 @@ import '/components/admin_components/answering_view/answering_view_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'trivia_page_model.dart';
 export 'trivia_page_model.dart';
 
 class TriviaPageWidget extends StatefulWidget {
   const TriviaPageWidget({
-    Key? key,
+    super.key,
     this.roomCode,
-  }) : super(key: key);
+  });
 
   final int? roomCode;
 
@@ -143,7 +141,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                       return Container(
                         width: double.infinity,
                         height: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: StreamBuilder<QuestionSetsRecord>(
                           stream: QuestionSetsRecord.getDocument(
                               triviaPageRoomRecord!.questionSet!),
@@ -174,12 +172,11 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                     builder: (context) {
                                       if (stackQuestionSetsRecord
                                               .questions.length ==
-                                          (triviaPageRoomRecord!
-                                                  .currentQuestionIndex +
+                                          (triviaPageRoomRecord.currentQuestionIndex +
                                               1)) {
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Container(
                                             width: double.infinity,
@@ -193,7 +190,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: Row(
@@ -210,7 +207,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                           children: [
                                                             Container(
                                                               decoration:
-                                                                  BoxDecoration(),
+                                                                  const BoxDecoration(),
                                                             ),
                                                           ],
                                                         ),
@@ -234,7 +231,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                       Expanded(
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -284,7 +281,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                     stream: queryPlayersRecord(
                                                       parent:
                                                           triviaPageRoomRecord
-                                                              ?.reference,
+                                                              .reference,
                                                       queryBuilder:
                                                           (playersRecord) =>
                                                               playersRecord
@@ -326,7 +323,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                             listViewPlayersRecordList
                                                                 .length,
                                                         separatorBuilder:
-                                                            (_, __) => SizedBox(
+                                                            (_, __) => const SizedBox(
                                                                 height: 16.0),
                                                         itemBuilder: (context,
                                                             listViewIndex) {
@@ -343,7 +340,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -381,11 +378,11 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                                       .rectangle,
                                                                 ),
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.00,
                                                                         0.00),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -427,8 +424,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                       } else {
                                         return Builder(
                                           builder: (context) {
-                                            if (!triviaPageRoomRecord!
-                                                .isStarted) {
+                                            if (!triviaPageRoomRecord.isStarted) {
                                               return Container(
                                                 width: double.infinity,
                                                 height: double.infinity,
@@ -438,7 +434,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                       .primary,
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   child: Column(
@@ -468,7 +464,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     16.0,
@@ -515,7 +511,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                       valueOrDefault<String>(
                                                         containerPlayersRecord
                                                             ?.score
-                                                            ?.toString(),
+                                                            .toString(),
                                                         '0',
                                                       ),
                                                       textAlign:
@@ -554,7 +550,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   24.0,
@@ -598,18 +594,17 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                     builder: (context) {
                                       if (stackQuestionSetsRecord
                                               .questions.length ==
-                                          (triviaPageRoomRecord!
-                                                  .currentQuestionIndex +
+                                          (triviaPageRoomRecord.currentQuestionIndex +
                                               1)) {
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 24.0),
                                                 child: Row(
@@ -625,7 +620,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                         children: [
                                                           Container(
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                           ),
                                                         ],
                                                       ),
@@ -658,7 +653,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                                 .transparent,
                                                             borderRadius: 20.0,
                                                             buttonSize: 55.0,
-                                                            icon: FaIcon(
+                                                            icon: const FaIcon(
                                                               FontAwesomeIcons
                                                                   .github,
                                                               color:
@@ -684,7 +679,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                     List<PlayersRecord>>(
                                                   stream: queryPlayersRecord(
                                                     parent: triviaPageRoomRecord
-                                                        ?.reference,
+                                                        .reference,
                                                     queryBuilder:
                                                         (playersRecord) =>
                                                             playersRecord
@@ -724,7 +719,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                           listViewPlayersRecordList
                                                               .length,
                                                       separatorBuilder:
-                                                          (_, __) => SizedBox(
+                                                          (_, __) => const SizedBox(
                                                               height: 16.0),
                                                       itemBuilder: (context,
                                                           listViewIndex) {
@@ -740,7 +735,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -780,11 +775,11 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                                     .rectangle,
                                                               ),
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.00,
                                                                       0.00),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         6.0,
@@ -831,8 +826,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                           ),
                                           child: Builder(
                                             builder: (context) {
-                                              if (!triviaPageRoomRecord!
-                                                  .isStarted) {
+                                              if (!triviaPageRoomRecord.isStarted) {
                                                 return Container(
                                                   width: double.infinity,
                                                   height: double.infinity,
@@ -843,7 +837,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     child: Column(
@@ -871,7 +865,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       16.0,
@@ -920,7 +914,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                         valueOrDefault<String>(
                                                           containerPlayersRecord
                                                               ?.score
-                                                              ?.toString(),
+                                                              .toString(),
                                                           '0',
                                                         ),
                                                         textAlign:
@@ -959,7 +953,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     24.0,
@@ -996,52 +990,44 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget> {
                                 Builder(
                                   builder: (context) {
                                     if (containerPlayersRecord?.answeredIndex ==
-                                        (triviaPageRoomRecord!
-                                                .currentQuestionIndex -
+                                        (triviaPageRoomRecord.currentQuestionIndex -
                                             1)) {
                                       return wrapWithModel(
                                         model: _model.answeringViewModel,
                                         updateCallback: () => setState(() {}),
                                         updateOnChange: true,
                                         child: AnsweringViewWidget(
-                                          key: ValueKey(triviaPageRoomRecord!
-                                              .currentQuestionIndex
+                                          key: ValueKey(triviaPageRoomRecord.currentQuestionIndex
                                               .toString()),
-                                          roomCode: triviaPageRoomRecord?.code,
+                                          roomCode: triviaPageRoomRecord.code,
                                           question: stackQuestionSetsRecord
-                                              .questions[triviaPageRoomRecord!
-                                                  .currentQuestionIndex]
+                                              .questions[triviaPageRoomRecord.currentQuestionIndex]
                                               .statement,
                                           option1: stackQuestionSetsRecord
-                                              .questions[triviaPageRoomRecord!
-                                                  .currentQuestionIndex]
+                                              .questions[triviaPageRoomRecord.currentQuestionIndex]
                                               .options[0],
                                           option2: stackQuestionSetsRecord
-                                              .questions[triviaPageRoomRecord!
-                                                  .currentQuestionIndex]
+                                              .questions[triviaPageRoomRecord.currentQuestionIndex]
                                               .options[1],
                                           option3: stackQuestionSetsRecord
-                                              .questions[triviaPageRoomRecord!
-                                                  .currentQuestionIndex]
+                                              .questions[triviaPageRoomRecord.currentQuestionIndex]
                                               .options[2],
                                           option4: stackQuestionSetsRecord
-                                              .questions[triviaPageRoomRecord!
-                                                  .currentQuestionIndex]
+                                              .questions[triviaPageRoomRecord.currentQuestionIndex]
                                               .options[3],
                                           playerRef:
                                               containerPlayersRecord?.reference,
                                           currentQuestionIndex:
                                               triviaPageRoomRecord
-                                                  ?.currentQuestionIndex,
+                                                  .currentQuestionIndex,
                                           questionIndex: stackQuestionSetsRecord
-                                              .questions[triviaPageRoomRecord!
-                                                  .currentQuestionIndex]
+                                              .questions[triviaPageRoomRecord.currentQuestionIndex]
                                               .correctOptionIndex,
                                         ),
                                       );
                                     } else {
                                       return Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                       );
                                     }
                                   },

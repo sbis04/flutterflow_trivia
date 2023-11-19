@@ -2,14 +2,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_question_set_large_model.dart';
 export 'empty_question_set_large_model.dart';
 
 class EmptyQuestionSetLargeWidget extends StatefulWidget {
-  const EmptyQuestionSetLargeWidget({Key? key}) : super(key: key);
+  const EmptyQuestionSetLargeWidget({super.key});
 
   @override
   _EmptyQuestionSetLargeWidgetState createState() =>
@@ -46,11 +44,11 @@ class _EmptyQuestionSetLargeWidgetState
     context.watch<FFAppState>();
 
     return Stack(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       children: [
         GridView(
           padding: EdgeInsets.zero,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 12.0,
             mainAxisSpacing: 12.0,
@@ -170,7 +168,7 @@ class _EmptyQuestionSetLargeWidgetState
             ),
           ],
         ),
-        Container(
+        const SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: custom_widgets.RadialGradientContainer(
@@ -184,19 +182,19 @@ class _EmptyQuestionSetLargeWidgetState
           ),
         ),
         Align(
-          alignment: AlignmentDirectional(0.00, 1.00),
+          alignment: const AlignmentDirectional(0.00, 1.00),
           child: Container(
             width: double.infinity,
             height: 100.0,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color(0x00FFFFFF),
+                  const Color(0x00FFFFFF),
                   FlutterFlowTheme.of(context).primaryBackground
                 ],
-                stops: [0.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                stops: const [0.0, 1.0],
+                begin: const AlignmentDirectional(0.0, -1.0),
+                end: const AlignmentDirectional(0, 1.0),
               ),
             ),
           ),
@@ -205,7 +203,7 @@ class _EmptyQuestionSetLargeWidgetState
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
               child: Icon(
                 Icons.notes_rounded,
                 color: FlutterFlowTheme.of(context).primaryText,
@@ -220,9 +218,9 @@ class _EmptyQuestionSetLargeWidgetState
                   ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Text(
-                'You can add a question set by clicking the \"Add\" button below.',
+                'You can add a question set by clicking the "Add" button below.',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.of(context).secondaryText,

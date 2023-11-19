@@ -7,23 +7,21 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'room_join_screen_model.dart';
 export 'room_join_screen_model.dart';
 
 class RoomJoinScreenWidget extends StatefulWidget {
   const RoomJoinScreenWidget({
-    Key? key,
+    super.key,
     this.roomCode,
-  }) : super(key: key);
+  });
 
   final int? roomCode;
 
@@ -53,8 +51,8 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -86,8 +84,8 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -177,7 +175,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                     actions: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -204,7 +202,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                     elevation: 0.0,
                   )
                 : null,
-            body: Container(
+            body: SizedBox(
               width: double.infinity,
               height: double.infinity,
               child: Stack(
@@ -230,13 +228,13 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                             FlutterFlowTheme.of(context).primary,
                             FlutterFlowTheme.of(context).secondary
                           ],
-                          stops: [0.0, 0.8, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
+                          stops: const [0.0, 0.8, 1.0],
+                          begin: const AlignmentDirectional(0.0, -1.0),
+                          end: const AlignmentDirectional(0, 1.0),
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 24.0, 24.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -271,7 +269,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 24.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -306,7 +304,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
-                                            color: Color(0xB3000000),
+                                            color: const Color(0xB3000000),
                                             fontSize: 14.0,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -329,7 +327,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -372,7 +370,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -387,9 +385,9 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 55.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -402,7 +400,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 2.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -410,7 +408,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                               ),
                             ).animateOnPageLoad(
                                 animationsMap['buttonOnPageLoadAnimation1']!),
-                            Spacer(),
+                            const Spacer(),
                             Image.asset(
                               'assets/images/trivia_logo_white_high_res.png',
                               width: double.infinity,
@@ -418,7 +416,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                               fit: BoxFit.contain,
                             ).animateOnPageLoad(
                                 animationsMap['imageOnPageLoadAnimation']!),
-                            Spacer(),
+                            const Spacer(),
                           ],
                         ),
                       ),
@@ -441,7 +439,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 32.0, 32.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -484,13 +482,13 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Spacer(),
+                                  const Spacer(),
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 60.0),
                                         child: Image.asset(
                                           'assets/images/trivia_logo_high_res.png',
@@ -502,11 +500,11 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                       ),
                                     ],
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.3,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0x00FFFFFF),
                                     ),
                                     child: Form(
@@ -522,7 +520,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                         children: [
                                           if (widget.roomCode != null)
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
                                               child: Row(
@@ -602,7 +600,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 24.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -650,7 +648,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color:
-                                                              Color(0xB3000000),
+                                                              const Color(0xB3000000),
                                                           fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -662,7 +660,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 60.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -682,7 +680,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -735,7 +733,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -751,11 +749,11 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                               options: FFButtonOptions(
                                                 width: double.infinity,
                                                 height: 60.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -774,7 +772,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                                               FontWeight.w500,
                                                         ),
                                                 elevation: 2.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -788,7 +786,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                       ),
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                 ],
                               ),
                             ),
@@ -814,11 +812,11 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).accent50,
                           ),
-                          alignment: AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.00, 0.00),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Container(
+                              SizedBox(
                                 width: 40.0,
                                 height: 40.0,
                                 child: custom_widgets.CircularIndicator(
@@ -830,7 +828,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Text(
                                   'Finding Room...',
@@ -846,7 +844,7 @@ class _RoomJoinScreenWidgetState extends State<RoomJoinScreenWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   'Please wait white the room is being fetched',

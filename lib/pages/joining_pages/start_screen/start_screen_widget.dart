@@ -8,22 +8,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'start_screen_model.dart';
 export 'start_screen_model.dart';
 
 class StartScreenWidget extends StatefulWidget {
   const StartScreenWidget({
-    Key? key,
+    super.key,
     this.roomCode,
-  }) : super(key: key);
+  });
 
   final int? roomCode;
 
@@ -66,8 +63,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -86,8 +83,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -106,8 +103,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -126,8 +123,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -146,8 +143,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -166,8 +163,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -186,8 +183,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -206,8 +203,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 30.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -290,7 +287,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                     actions: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -317,7 +314,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                     elevation: 0.0,
                   )
                 : null,
-            body: Container(
+            body: SizedBox(
               width: double.infinity,
               height: double.infinity,
               child: Stack(
@@ -343,21 +340,21 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                             FlutterFlowTheme.of(context).primary,
                             FlutterFlowTheme.of(context).secondary
                           ],
-                          stops: [0.0, 0.8, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
+                          stops: const [0.0, 0.8, 1.0],
+                          begin: const AlignmentDirectional(0.0, -1.0),
+                          end: const AlignmentDirectional(0, 1.0),
                         ),
                       ),
                       child: Stack(
-                        alignment: AlignmentDirectional(0.0, 1.0),
+                        alignment: const AlignmentDirectional(0.0, 1.0),
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 24.0, 24.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 Image.asset(
                                   'assets/images/trivia_logo_high_res.png',
                                   width: double.infinity,
@@ -365,7 +362,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                   fit: BoxFit.contain,
                                 ).animateOnPageLoad(
                                     animationsMap['imageOnPageLoadAnimation']!),
-                                Spacer(flex: 4),
+                                const Spacer(flex: 4),
                               ],
                             ),
                           ),
@@ -373,13 +370,13 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                             key: _model.formKey2,
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(0.0),
@@ -416,7 +413,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Poppins',
-                                                      color: Color(0x80FFFFFF),
+                                                      color: const Color(0x80FFFFFF),
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -475,7 +472,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                               ),
                                             ),
                                             filled: true,
-                                            fillColor: Color(0x34FFFFFF),
+                                            fillColor: const Color(0x34FFFFFF),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -499,7 +496,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(0.0),
@@ -536,7 +533,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Poppins',
-                                                      color: Color(0x80FFFFFF),
+                                                      color: const Color(0x80FFFFFF),
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -595,7 +592,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                               ),
                                             ),
                                             filled: true,
-                                            fillColor: Color(0x34FFFFFF),
+                                            fillColor: const Color(0x34FFFFFF),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -621,7 +618,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 60.0),
                                     child: Builder(
                                       builder: (context) {
@@ -631,7 +628,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                             children: [
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: FlutterFlowIconButton(
@@ -666,13 +663,13 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                         isGlobal: true,
                                                         avoidOverflow: false,
                                                         targetAnchor:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
                                                         followerAnchor:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -696,7 +693,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                                           context)
                                                                       .unfocus(),
                                                               child:
-                                                                  AdminLoginDialogWidget(),
+                                                                  const AdminLoginDialogWidget(),
                                                             ),
                                                           );
                                                         },
@@ -745,7 +742,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                       context.mounted,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -758,11 +755,11 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                   options: FFButtonOptions(
                                                     height: 55.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -781,7 +778,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                               FontWeight.w500,
                                                         ),
                                                     elevation: 2.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -797,7 +794,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                         } else {
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 60.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -862,7 +859,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -883,7 +880,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -899,11 +896,11 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                               options: FFButtonOptions(
                                                 width: double.infinity,
                                                 height: 55.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -922,7 +919,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                               FontWeight.w500,
                                                         ),
                                                 elevation: 2.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -963,13 +960,13 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                             FlutterFlowTheme.of(context).primary,
                             FlutterFlowTheme.of(context).secondary
                           ],
-                          stops: [0.8, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
+                          stops: const [0.8, 1.0],
+                          begin: const AlignmentDirectional(0.0, -1.0),
+                          end: const AlignmentDirectional(0, 1.0),
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 32.0, 32.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -993,7 +990,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                 FlutterFlowIconButton(
                                   borderRadius: 20.0,
                                   buttonSize: 55.0,
-                                  icon: FaIcon(
+                                  icon: const FaIcon(
                                     FontAwesomeIcons.github,
                                     color: Colors.white,
                                     size: 36.0,
@@ -1011,13 +1008,13 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Spacer(),
+                                  const Spacer(),
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 60.0),
                                         child: Image.asset(
                                           'assets/images/trivia_logo_white_high_res.png',
@@ -1029,11 +1026,11 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                       ),
                                     ],
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.3,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0x00FFFFFF),
                                     ),
                                     child: Form(
@@ -1049,7 +1046,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 30.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -1090,7 +1087,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color:
-                                                              Color(0x80FFFFFF),
+                                                              const Color(0x80FFFFFF),
                                                           fontSize: 20.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -1177,7 +1174,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                     ),
                                                     filled: true,
                                                     fillColor:
-                                                        Color(0x34FFFFFF),
+                                                        const Color(0x34FFFFFF),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1206,7 +1203,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 30.0),
                                             child: ClipRRect(
                                               borderRadius:
@@ -1246,7 +1243,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color:
-                                                              Color(0x80FFFFFF),
+                                                              const Color(0x80FFFFFF),
                                                           fontSize: 20.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -1333,7 +1330,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                     ),
                                                     filled: true,
                                                     fillColor:
-                                                        Color(0x34FFFFFF),
+                                                        const Color(0x34FFFFFF),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1364,7 +1361,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 60.0),
                                             child: Builder(
                                               builder: (context) {
@@ -1377,7 +1374,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                         builder: (context) =>
                                                             Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1419,13 +1416,13 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                                 avoidOverflow:
                                                                     false,
                                                                 targetAnchor:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0)
                                                                         .resolve(
                                                                             Directionality.of(context)),
                                                                 followerAnchor:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0)
                                                                         .resolve(
@@ -1445,7 +1442,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                                           : FocusScope.of(context)
                                                                               .unfocus(),
                                                                       child:
-                                                                          AdminLoginDialogWidget(),
+                                                                          const AdminLoginDialogWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -1496,7 +1493,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1511,14 +1508,14 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                               FFButtonOptions(
                                                             height: 60.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1545,7 +1542,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -1610,7 +1607,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -1624,14 +1621,14 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                       width: double.infinity,
                                                       height: 60.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1657,7 +1654,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                                                         .w500,
                                                               ),
                                                       elevation: 2.0,
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1676,7 +1673,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget>
                                       ),
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                 ],
                               ),
                             ),

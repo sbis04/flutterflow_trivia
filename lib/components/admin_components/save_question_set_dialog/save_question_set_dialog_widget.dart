@@ -5,20 +5,17 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'save_question_set_dialog_model.dart';
 export 'save_question_set_dialog_model.dart';
 
 class SaveQuestionSetDialogWidget extends StatefulWidget {
   const SaveQuestionSetDialogWidget({
-    Key? key,
+    super.key,
     this.setName,
     this.questionSetRef,
-  }) : super(key: key);
+  });
 
   final String? setName;
   final DocumentReference? questionSetRef;
@@ -67,7 +64,7 @@ class _SaveQuestionSetDialogWidgetState
         sigmaY: 4.0,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
         child: Container(
           width: 450.0,
           decoration: BoxDecoration(
@@ -75,7 +72,7 @@ class _SaveQuestionSetDialogWidgetState
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -109,7 +106,7 @@ class _SaveQuestionSetDialogWidgetState
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: TextFormField(
                     controller: _model.setNameFieldController,
                     focusNode: _model.setNameFieldFocusNode,
@@ -162,7 +159,7 @@ class _SaveQuestionSetDialogWidgetState
                       ),
                       filled: true,
                       fillColor: FlutterFlowTheme.of(context).accent2,
-                      contentPadding: EdgeInsetsDirectional.fromSTEB(
+                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
                           24.0, 24.0, 24.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -176,7 +173,7 @@ class _SaveQuestionSetDialogWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent(
@@ -239,9 +236,9 @@ class _SaveQuestionSetDialogWidgetState
                       width: 140.0,
                       height: 55.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -251,7 +248,7 @@ class _SaveQuestionSetDialogWidgetState
                                 fontWeight: FontWeight.normal,
                               ),
                       elevation: 2.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

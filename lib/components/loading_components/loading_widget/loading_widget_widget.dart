@@ -2,14 +2,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'loading_widget_model.dart';
 export 'loading_widget_model.dart';
 
 class LoadingWidgetWidget extends StatefulWidget {
-  const LoadingWidgetWidget({Key? key}) : super(key: key);
+  const LoadingWidgetWidget({super.key});
 
   @override
   _LoadingWidgetWidgetState createState() => _LoadingWidgetWidgetState();
@@ -46,7 +44,7 @@ class _LoadingWidgetWidgetState extends State<LoadingWidgetWidget> {
     return Container(
       width: 600.0,
       height: 160.0,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 600.0,
       ),
       decoration: BoxDecoration(
@@ -57,7 +55,7 @@ class _LoadingWidgetWidgetState extends State<LoadingWidgetWidget> {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: 50.0,
             height: 50.0,
             child: custom_widgets.CircularIndicator(

@@ -6,18 +6,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'question_view_model.dart';
 export 'question_view_model.dart';
 
 class QuestionViewWidget extends StatefulWidget {
   const QuestionViewWidget({
-    Key? key,
+    super.key,
     required this.question,
     required this.index,
-  }) : super(key: key);
+  });
 
   final QuestionStruct? question;
   final int? index;
@@ -55,7 +53,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +63,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                 child: Text(
                   'Question',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -88,7 +86,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                 ),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
                   child: Text(
                     valueOrDefault<String>(
                       widget.question?.statement,
@@ -110,13 +108,13 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             desktop: false,
           ))
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -146,7 +144,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -157,7 +155,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 1',
@@ -182,11 +180,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[0],
+                                widget.question?.options[0],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -202,7 +200,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(width: 16.0)),
+                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           if (responsiveVisibility(
@@ -211,13 +209,13 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             desktop: false,
           ))
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -247,7 +245,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -258,7 +256,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 2',
@@ -283,11 +281,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[1],
+                                widget.question?.options[1],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -303,7 +301,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(width: 16.0)),
+                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           if (responsiveVisibility(
@@ -312,13 +310,13 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             tablet: false,
           ))
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -348,7 +346,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -359,7 +357,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 1',
@@ -384,11 +382,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[0],
+                                widget.question?.options[0],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -406,7 +404,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -436,7 +434,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -447,7 +445,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 2',
@@ -472,11 +470,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[1],
+                                widget.question?.options[1],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -492,7 +490,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(width: 16.0)),
+                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           if (responsiveVisibility(
@@ -501,13 +499,13 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             desktop: false,
           ))
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -537,7 +535,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -548,7 +546,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 3',
@@ -573,11 +571,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[2],
+                                widget.question?.options[2],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -593,7 +591,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(width: 16.0)),
+                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           if (responsiveVisibility(
@@ -602,13 +600,13 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             desktop: false,
           ))
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -638,7 +636,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -649,7 +647,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 4',
@@ -674,11 +672,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[3],
+                                widget.question?.options[3],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -694,7 +692,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(width: 16.0)),
+                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           if (responsiveVisibility(
@@ -703,13 +701,13 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
             tablet: false,
           ))
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -739,7 +737,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -750,7 +748,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 3',
@@ -775,11 +773,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[2],
+                                widget.question?.options[2],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -797,7 +795,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Stack(
                       children: [
                         Theme(
@@ -827,7 +825,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                         Container(
                           width: 36.0,
                           height: 36.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ],
                     ),
@@ -838,7 +836,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 4.0),
                           child: Text(
                             'Option 4',
@@ -863,11 +861,11 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
                             child: Text(
                               valueOrDefault<String>(
-                                widget.question?.options?[3],
+                                widget.question?.options[3],
                                 '-',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -883,17 +881,17 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       ],
                     ),
                   ),
-                ].divide(SizedBox(width: 16.0)),
+                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent('QUESTION_VIEW_COMP_DELETE_BTN_ON_TAP');
@@ -911,9 +909,9 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                     options: FFButtonOptions(
                       height: 50.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).accent1,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyLarge.override(
@@ -970,9 +968,9 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                           context: context,
                           isGlobal: true,
                           avoidOverflow: false,
-                          targetAnchor: AlignmentDirectional(0.0, 0.0)
+                          targetAnchor: const AlignmentDirectional(0.0, 0.0)
                               .resolve(Directionality.of(context)),
-                          followerAnchor: AlignmentDirectional(0.0, 0.0)
+                          followerAnchor: const AlignmentDirectional(0.0, 0.0)
                               .resolve(Directionality.of(context)),
                           builder: (dialogContext) {
                             return Material(
@@ -987,16 +985,16 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                       }
                     },
                     text: 'Edit',
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.mode_edit_rounded,
                       size: 15.0,
                     ),
                     options: FFButtonOptions(
                       height: 50.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle: FlutterFlowTheme.of(context)
                           .bodyLarge
@@ -1007,7 +1005,7 @@ class _QuestionViewWidgetState extends State<QuestionViewWidget> {
                             fontWeight: FontWeight.w600,
                           ),
                       elevation: 3.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

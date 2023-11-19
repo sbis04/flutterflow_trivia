@@ -10,13 +10,12 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'question_add_page_model.dart';
 export 'question_add_page_model.dart';
 
 class QuestionAddPageWidget extends StatefulWidget {
-  const QuestionAddPageWidget({Key? key}) : super(key: key);
+  const QuestionAddPageWidget({super.key});
 
   @override
   _QuestionAddPageWidgetState createState() => _QuestionAddPageWidgetState();
@@ -98,7 +97,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                               : FocusScope.of(context).unfocus(),
                           child: Padding(
                             padding: MediaQuery.viewInsetsOf(context),
-                            child: QuestionAddBottomSheetWidget(),
+                            child: const QuestionAddBottomSheetWidget(),
                           ),
                         );
                       },
@@ -109,9 +108,9 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                       context: context,
                       isGlobal: true,
                       avoidOverflow: false,
-                      targetAnchor: AlignmentDirectional(0.0, 0.0)
+                      targetAnchor: const AlignmentDirectional(0.0, 0.0)
                           .resolve(Directionality.of(context)),
-                      followerAnchor: AlignmentDirectional(0.0, 0.0)
+                      followerAnchor: const AlignmentDirectional(0.0, 0.0)
                           .resolve(Directionality.of(context)),
                       builder: (dialogContext) {
                         return Material(
@@ -121,7 +120,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                 ? FocusScope.of(context)
                                     .requestFocus(_model.unfocusNode)
                                 : FocusScope.of(context).unfocus(),
-                            child: QuestionAddLargeWidget(),
+                            child: const QuestionAddLargeWidget(),
                           ),
                         );
                       },
@@ -155,13 +154,13 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                   ))
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -220,7 +219,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -250,11 +249,11 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                         isGlobal: true,
                                         avoidOverflow: false,
                                         targetAnchor:
-                                            AlignmentDirectional(0.0, 0.0)
+                                            const AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         followerAnchor:
-                                            AlignmentDirectional(0.0, 0.0)
+                                            const AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         builder: (dialogContext) {
@@ -269,7 +268,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                                   : FocusScope.of(context)
                                                       .unfocus(),
                                               child:
-                                                  SaveQuestionSetDialogWidget(),
+                                                  const SaveQuestionSetDialogWidget(),
                                             ),
                                           );
                                         },
@@ -284,10 +283,10 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 50.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
@@ -300,7 +299,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                             fontWeight: FontWeight.w600,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -313,17 +312,17 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Builder(
                                 builder: (context) {
                                   final questionList =
                                       FFAppState().questionSet.toList();
                                   if (questionList.isEmpty) {
-                                    return EmptyQuestionWidget();
+                                    return const EmptyQuestionWidget();
                                   }
                                   return ListView.separated(
-                                    padding: EdgeInsets.fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -332,7 +331,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount: questionList.length,
                                     separatorBuilder: (_, __) =>
-                                        SizedBox(height: 16.0),
+                                        const SizedBox(height: 16.0),
                                     itemBuilder: (context, questionListIndex) {
                                       final questionListItem =
                                           questionList[questionListIndex];
@@ -357,9 +356,9 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.00, 0.00),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 32.0, 32.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -398,12 +397,12 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                             context: context,
                                             isGlobal: true,
                                             avoidOverflow: false,
-                                            targetAnchor: AlignmentDirectional(
+                                            targetAnchor: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                             followerAnchor:
-                                                AlignmentDirectional(0.0, 0.0)
+                                                const AlignmentDirectional(0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
                                             builder: (dialogContext) {
@@ -419,7 +418,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                                       : FocusScope.of(context)
                                                           .unfocus(),
                                                   child:
-                                                      SaveQuestionSetDialogWidget(),
+                                                      const SaveQuestionSetDialogWidget(),
                                                 ),
                                               );
                                             },
@@ -435,10 +434,10 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                         options: FFButtonOptions(
                                           height: 50.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondary,
@@ -453,7 +452,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                                 fontWeight: FontWeight.w600,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -465,7 +464,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -502,7 +501,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -521,7 +520,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                               fontSize: 24.0,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 16.0)),
+                                    ].divide(const SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ],
@@ -532,10 +531,10 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                   final questionList =
                                       FFAppState().questionSet.toList();
                                   if (questionList.isEmpty) {
-                                    return EmptyQuestionWidget();
+                                    return const EmptyQuestionWidget();
                                   }
                                   return ListView.separated(
-                                    padding: EdgeInsets.fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -544,7 +543,7 @@ class _QuestionAddPageWidgetState extends State<QuestionAddPageWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount: questionList.length,
                                     separatorBuilder: (_, __) =>
-                                        SizedBox(height: 16.0),
+                                        const SizedBox(height: 16.0),
                                     itemBuilder: (context, questionListIndex) {
                                       final questionListItem =
                                           questionList[questionListIndex];

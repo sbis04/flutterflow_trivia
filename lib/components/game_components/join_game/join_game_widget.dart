@@ -4,16 +4,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'join_game_model.dart';
 export 'join_game_model.dart';
 
 class JoinGameWidget extends StatefulWidget {
-  const JoinGameWidget({Key? key}) : super(key: key);
+  const JoinGameWidget({super.key});
 
   @override
   _JoinGameWidgetState createState() => _JoinGameWidgetState();
@@ -56,12 +53,12 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
         color: FlutterFlowTheme.of(context).primaryBtnText,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(24.0, 30.0, 24.0, 30.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 30.0, 24.0, 30.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -84,7 +81,7 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                         hintStyle:
                             FlutterFlowTheme.of(context).bodySmall.override(
                                   fontFamily: 'Poppins',
-                                  color: Color(0x7F000000),
+                                  color: const Color(0x7F000000),
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.normal,
                                 ),
@@ -141,7 +138,7 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent('JOIN_GAME_COMP_VERIFY_BTN_ON_TAP');
@@ -156,9 +153,9 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                         width: 100.0,
                         height: 40.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: Colors.black,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -168,7 +165,7 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                                   fontWeight: FontWeight.normal,
                                 ),
                         elevation: 2.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -258,7 +255,7 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                           'TriviaPage',
                           queryParameters: {
                             'roomCode': serializeParam(
-                              buttonRoomRecord?.code,
+                              buttonRoomRecord.code,
                               ParamType.int,
                             ),
                           }.withoutNulls,
@@ -276,9 +273,9 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                       width: double.infinity,
                       height: 55.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -288,7 +285,7 @@ class _JoinGameWidgetState extends State<JoinGameWidget> {
                                 fontWeight: FontWeight.normal,
                               ),
                       elevation: 2.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

@@ -9,19 +9,17 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'question_edit_page_model.dart';
 export 'question_edit_page_model.dart';
 
 class QuestionEditPageWidget extends StatefulWidget {
   const QuestionEditPageWidget({
-    Key? key,
+    super.key,
     required this.questionSetRef,
-  }) : super(key: key);
+  });
 
   final DocumentReference? questionSetRef;
 
@@ -105,7 +103,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                               : FocusScope.of(context).unfocus(),
                           child: Padding(
                             padding: MediaQuery.viewInsetsOf(context),
-                            child: QuestionAddBottomSheetWidget(),
+                            child: const QuestionAddBottomSheetWidget(),
                           ),
                         );
                       },
@@ -116,9 +114,9 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                       context: context,
                       isGlobal: true,
                       avoidOverflow: false,
-                      targetAnchor: AlignmentDirectional(0.0, 0.0)
+                      targetAnchor: const AlignmentDirectional(0.0, 0.0)
                           .resolve(Directionality.of(context)),
-                      followerAnchor: AlignmentDirectional(0.0, 0.0)
+                      followerAnchor: const AlignmentDirectional(0.0, 0.0)
                           .resolve(Directionality.of(context)),
                       builder: (dialogContext) {
                         return Material(
@@ -128,7 +126,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                 ? FocusScope.of(context)
                                     .requestFocus(_model.unfocusNode)
                                 : FocusScope.of(context).unfocus(),
-                            child: QuestionAddLargeWidget(),
+                            child: const QuestionAddLargeWidget(),
                           ),
                         );
                       },
@@ -180,14 +178,14 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -253,7 +251,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -283,7 +281,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -299,7 +297,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 4.0, 0.0),
                                               child: Text(
                                                 'Question Set:',
@@ -337,7 +335,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 4.0, 0.0),
                                               child: Text(
                                                 'Created At:',
@@ -356,7 +354,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 4.0, 0.0),
                                               child: Text(
                                                 dateTimeFormat(
@@ -410,12 +408,12 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                             context: context,
                                             isGlobal: true,
                                             avoidOverflow: false,
-                                            targetAnchor: AlignmentDirectional(
+                                            targetAnchor: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                             followerAnchor:
-                                                AlignmentDirectional(0.0, 0.0)
+                                                const AlignmentDirectional(0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
                                             builder: (dialogContext) {
@@ -454,10 +452,10 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                         options: FFButtonOptions(
                                           height: 45.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondary,
@@ -472,7 +470,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                 fontWeight: FontWeight.w600,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -486,17 +484,17 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Builder(
                                     builder: (context) {
                                       final questionList =
                                           FFAppState().questionSet.toList();
                                       if (questionList.isEmpty) {
-                                        return EmptyQuestionWidget();
+                                        return const EmptyQuestionWidget();
                                       }
                                       return ListView.separated(
-                                        padding: EdgeInsets.fromLTRB(
+                                        padding: const EdgeInsets.fromLTRB(
                                           0,
                                           0,
                                           0,
@@ -506,7 +504,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                         scrollDirection: Axis.vertical,
                                         itemCount: questionList.length,
                                         separatorBuilder: (_, __) =>
-                                            SizedBox(height: 16.0),
+                                            const SizedBox(height: 16.0),
                                         itemBuilder:
                                             (context, questionListIndex) {
                                           final questionListItem =
@@ -532,9 +530,9 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                         tablet: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.00, 0.00),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 32.0, 32.0, 32.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -563,7 +561,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -575,7 +573,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 4.0, 0.0),
                                                     child: Text(
@@ -620,7 +618,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 4.0, 0.0),
                                                     child: Text(
@@ -644,7 +642,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 4.0, 0.0),
                                                     child: Text(
@@ -705,13 +703,13 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                 isGlobal: true,
                                                 avoidOverflow: false,
                                                 targetAnchor:
-                                                    AlignmentDirectional(
+                                                    const AlignmentDirectional(
                                                             0.0, 0.0)
                                                         .resolve(
                                                             Directionality.of(
                                                                 context)),
                                                 followerAnchor:
-                                                    AlignmentDirectional(
+                                                    const AlignmentDirectional(
                                                             0.0, 0.0)
                                                         .resolve(
                                                             Directionality.of(
@@ -755,10 +753,10 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                             ),
                                             options: FFButtonOptions(
                                               height: 50.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -774,7 +772,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -786,7 +784,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -825,7 +823,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -844,7 +842,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                                   fontSize: 24.0,
                                                 ),
                                           ),
-                                        ].divide(SizedBox(height: 16.0)),
+                                        ].divide(const SizedBox(height: 16.0)),
                                       ),
                                     ),
                                   ],
@@ -855,10 +853,10 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                       final questionList =
                                           FFAppState().questionSet.toList();
                                       if (questionList.isEmpty) {
-                                        return EmptyQuestionWidget();
+                                        return const EmptyQuestionWidget();
                                       }
                                       return ListView.separated(
-                                        padding: EdgeInsets.fromLTRB(
+                                        padding: const EdgeInsets.fromLTRB(
                                           0,
                                           0,
                                           0,
@@ -867,7 +865,7 @@ class _QuestionEditPageWidgetState extends State<QuestionEditPageWidget> {
                                         scrollDirection: Axis.vertical,
                                         itemCount: questionList.length,
                                         separatorBuilder: (_, __) =>
-                                            SizedBox(height: 16.0),
+                                            const SizedBox(height: 16.0),
                                         itemBuilder:
                                             (context, questionListIndex) {
                                           final questionListItem =

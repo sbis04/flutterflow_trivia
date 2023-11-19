@@ -2,22 +2,19 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'winners_page_model.dart';
 export 'winners_page_model.dart';
 
 class WinnersPageWidget extends StatefulWidget {
   const WinnersPageWidget({
-    Key? key,
+    super.key,
     required this.roomRef,
-  }) : super(key: key);
+  });
 
   final DocumentReference? roomRef;
 
@@ -106,14 +103,14 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                             color: FlutterFlowTheme.of(context).primary,
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -147,7 +144,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -189,18 +186,18 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       height: 100.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 16.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -264,7 +261,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                       listViewPlayersRecordList
                                                           .length,
                                                   separatorBuilder: (_, __) =>
-                                                      SizedBox(height: 16.0),
+                                                      const SizedBox(height: 16.0),
                                                   itemBuilder:
                                                       (context, listViewIndex) {
                                                     final listViewPlayersRecord =
@@ -279,7 +276,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -319,11 +316,11 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                                 .rectangle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         4.0,
@@ -380,7 +377,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                             color: FlutterFlowTheme.of(context).primary,
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 32.0, 32.0, 32.0, 32.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -404,7 +401,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -448,7 +445,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                       borderColor: Colors.transparent,
                                       borderRadius: 20.0,
                                       buttonSize: 55.0,
-                                      icon: FaIcon(
+                                      icon: const FaIcon(
                                         FontAwesomeIcons.github,
                                         color: Colors.white,
                                         size: 36.0,
@@ -466,16 +463,16 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                   child: Container(
                                     width: double.infinity,
                                     height: 100.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 16.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -539,7 +536,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                       listViewPlayersRecordList
                                                           .length,
                                                   separatorBuilder: (_, __) =>
-                                                      SizedBox(height: 16.0),
+                                                      const SizedBox(height: 16.0),
                                                   itemBuilder:
                                                       (context, listViewIndex) {
                                                     final listViewPlayersRecord =
@@ -554,7 +551,7 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -594,11 +591,11 @@ class _WinnersPageWidgetState extends State<WinnersPageWidget> {
                                                                 .rectangle,
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         6.0,
